@@ -75,11 +75,11 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => '',
-	'password' => '',
-	'database' => '',
-	'dbdriver' => 'mysqli',
+	'hostname' => 'ec2-54-246-96-76.eu-west-1.compute.amazonaws.com',
+	'username' => 'dxdwceqsuhifay',
+	'password' => 'e4f8ba27d36bb58fe8c5dcae4b7efedf54f41f83b6084eaed969096c52adb69e',
+	'database' => 'dcnqh66oel6ura',
+	'dbdriver' => 'postgre',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
