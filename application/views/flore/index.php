@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>DevOOPS v2</title>
+		<title>Mon projet web</title>
 		<meta name="description" content="description">
 		<meta name="author" content="DevOOPS">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -47,100 +47,376 @@
 		</div>
 	</div>
 </div>
-<header class="navbar">
-	<div class="container-fluid expanded-panel">
-		<div class="row">
-			<div id="logo" class="col-xs-12 col-sm-2">
-				<a href="index_v1.html">DevOOPS v2</a>
+
+<div class="row">
+	<div id="breadcrumb" class="col-xs-12">
+		<a href="#" class="show-sidebar">
+			<i class="fa fa-bars"></i>
+		</a>
+		<ol class="breadcrumb pull-left">
+			<li><a href="index.html">Dashboard</a></li>
+			<li><a href="#">Forms</a></li>
+			<li><a href="#">Forms layouts</a></li>
+		</ol>
+		<div id="social" class="pull-right">
+			<a href="#"><i class="fa fa-google-plus"></i></a>
+			<a href="#"><i class="fa fa-facebook"></i></a>
+			<a href="#"><i class="fa fa-twitter"></i></a>
+			<a href="#"><i class="fa fa-linkedin"></i></a>
+			<a href="#"><i class="fa fa-youtube"></i></a>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12 col-sm-12">
+		<div class="box">
+			<div class="box-header">
+				<div class="box-name">
+					<i class="fa fa-search"></i>
+					<span>Registration form</span>
+				</div>
+				<div class="box-icons">
+					<a class="collapse-link">
+						<i class="fa fa-chevron-up"></i>
+					</a>
+					<a class="expand-link">
+						<i class="fa fa-expand"></i>
+					</a>
+					<a class="close-link">
+						<i class="fa fa-times"></i>
+					</a>
+				</div>
+				<div class="no-move"></div>
 			</div>
-			<div id="top-panel" class="col-xs-12 col-sm-10">
-				<div class="row">
-					<div class="col-xs-8 col-sm-4">
-						<div id="search">
-							<input type="text" placeholder="search"/>
-							<i class="fa fa-search"></i>
+			<div class="box-content">
+				<h4 class="page-header">Registration form</h4>
+				<form class="form-horizontal" role="form">
+					<div class="form-group">
+						<label class="col-sm-2 control-label">First name</label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" placeholder="First name" data-toggle="tooltip" data-placement="bottom" title="Tooltip for name">
+						</div>
+						<label class="col-sm-2 control-label">Last name</label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" placeholder="Last name" data-toggle="tooltip" data-placement="bottom" title="Tooltip for last name">
 						</div>
 					</div>
-					<div class="col-xs-4 col-sm-8 top-panel-right">
-						<a href="#" class="about">about</a>
-						<a href="index.html" class="style2"></a>
-						<ul class="nav navbar-nav pull-right panel-menu">
-							<li class="hidden-xs">
-								<a href="index.html" class="modal-link">
-									<i class="fa fa-bell"></i>
-									<span class="badge">7</span>
-								</a>
-							</li>
-							<li class="hidden-xs">
-								<a class="ajax-link" href="ajax/calendar.html">
-									<i class="fa fa-calendar"></i>
-									<span class="badge">7</span>
-								</a>
-							</li>
-							<li class="hidden-xs">
-								<a href="ajax/page_messages.html" class="ajax-link">
-									<i class="fa fa-envelope"></i>
-									<span class="badge">7</span>
-								</a>
-							</li>
-							<li class="dropdown">
-								<a href="#" class="dropdown-toggle account" data-toggle="dropdown">
-									<div class="avatar">
-										<img src="img/avatar.jpg" class="img-circle" alt="avatar" />
-									</div>
-									<i class="fa fa-angle-down pull-right"></i>
-									<div class="user-mini pull-right">
-										<span class="welcome">Welcome,</span>
-										<span>Jane Devoops</span>
-									</div>
-								</a>
-								<ul class="dropdown-menu">
-									<li>
-										<a href="#">
-											<i class="fa fa-user"></i>
-											<span>Profile</span>
-										</a>
-									</li>
-									<li>
-										<a href="ajax/page_messages.html" class="ajax-link">
-											<i class="fa fa-envelope"></i>
-											<span>Messages</span>
-										</a>
-									</li>
-									<li>
-										<a href="ajax/gallery_simple.html" class="ajax-link">
-											<i class="fa fa-picture-o"></i>
-											<span>Albums</span>
-										</a>
-									</li>
-									<li>
-										<a href="ajax/calendar.html" class="ajax-link">
-											<i class="fa fa-tasks"></i>
-											<span>Tasks</span>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<i class="fa fa-cog"></i>
-											<span>Settings</span>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<i class="fa fa-power-off"></i>
-											<span>Logout</span>
-										</a>
-									</li>
-								</ul>
-							</li>
-						</ul>
+					
+						<label class="col-sm-2 control-label">Address</label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" placeholder="Address">
+							<span class="fa fa-check-square-o txt-success form-control-feedback"></span>
+						</div>
 					</div>
-				</div>
+					<div class="form-group has-warning has-feedback">
+						<label class="col-sm-2 control-label">Residence</label>
+						<div class="col-sm-2">
+							<input type="text" class="form-control" placeholder="City">
+							<span class="fa fa-key txt-warning form-control-feedback"></span>
+						</div>
+						<div class="col-sm-2">
+							<input type="text" class="form-control" placeholder="Country">
+							<span class="fa fa-frown-o txt-danger form-control-feedback"></span>
+						</div>
+						<label class="col-sm-1 control-label">LAPIN </label>
+						<div class="col-sm-2">
+							<input type="text" class="form-control" placeholder="Another info" data-toggle="tooltip" data-placement="top" title="Hello world!">
+						</div>
+						<div class="col-sm-2">
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" checked> No exist
+									<i class="fa fa-square-o small"></i>
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-group has-warning has-feedback">
+						<label class="col-sm-2 control-label">Select you OS</label>
+						
+						<label class="col-sm-2 control-label">Tooltip for inputs</label>
+						<div class="col-sm-2">
+							<input type="text" class="form-control" placeholder="Another info" data-toggle="tooltip" data-placement="top" title="Hello world!">
+						</div>
+						<span class="help-inline col-xs-12 col-sm-2">
+							<span class="middle txt-default">only example</span>
+						</span>
+					</div>
+					<div class="form-group has-error has-feedback">
+						<label class="col-sm-2 control-label">Date</label>
+						<div class="col-sm-2">
+							<input type="text" id="input_date" class="form-control" placeholder="Date">
+							<span class="fa fa-calendar txt-danger form-control-feedback"></span>
+						</div>
+						<div class="col-sm-2">
+							<input type="text" id="input_time" class="form-control" placeholder="Time">
+							<span class="fa fa-clock-o txt-danger form-control-feedback"></span>
+						</div>
+						<label class="col-sm-2 control-label">Disabled input</label>
+						<div class="col-sm-2">
+							<input type="text" class="form-control" placeholder="No info" data-toggle="tooltip" data-placement="top" title="Hello world!" disabled>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="form-styles">Relative Sizing</label>
+						<div class="col-sm-10">
+							<div class="row">
+								<div class="col-sm-2">
+									<input class="form-control" id="form-styles" placeholder=".col-sm-2" type="text">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-12">
+									<p><small>Dynamic resizing col</small></p>
+									<div class="progress progress-ui">
+										  <div class="progress-bar progress-bar-success slider-style slider-range-min" style="width: 100%;"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="form-styles">Textarea</label>
+						<div class="col-sm-10">
+								<textarea class="form-control" rows="5" id="wysiwig_simple"></textarea>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="form-styles">Extreme Textarea</label>
+						<div class="col-sm-10">
+								<textarea class="form-control" rows="5" id="wysiwig_full"></textarea>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Input groups</label>
+						<div class="col-sm-2">
+							<div class="input-group">
+							  <span class="input-group-addon"><i class="fa fa-github-square"></i></span>
+							  <input type="text" class="form-control" placeholder="GitHub">
+							</div>
+						</div>
+						<div class="col-sm-2">
+							<div class="input-group">
+							  <input type="text" class="form-control" placeholder="Group">
+							  <span class="input-group-addon"><i class="fa fa-group"></i></span>
+							</div>
+						</div>
+						<div class="col-sm-2">
+							<div class="input-group">
+							  <span class="input-group-addon"><i class="fa fa-money"></i></span>
+							  <input type="text" class="form-control" placeholder="Money">
+							  <span class="input-group-addon"><i class="fa fa-usd"></i></span>
+							</div>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-2">
+							<button type="cancel" class="btn btn-default btn-label-left">
+							<span><i class="fa fa-clock-o txt-danger"></i></span>
+								Cancel
+							</button>
+						</div>
+						<div class="col-sm-2">
+							<button type="submit" class="btn btn-warning btn-label-left">
+							<span><i class="fa fa-clock-o"></i></span>
+								Send later
+							</button>
+						</div>
+						<div class="col-sm-2">
+							<button type="submit" class="btn btn-primary btn-label-left">
+							<span><i class="fa fa-clock-o"></i></span>
+								Submit
+							</button>
+						</div>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
-</header>
-<!--End Header-->
+</div>
+<div class="row">
+	<div class="col-xs-12 col-sm-8">
+		<div class="box">
+			<div class="box-header">
+				<div class="box-name">
+					<i class="fa fa-search"></i>
+					<span>Validator forms</span>
+				</div>
+				<div class="box-icons">
+					<a class="collapse-link">
+						<i class="fa fa-chevron-up"></i>
+					</a>
+					<a class="expand-link">
+						<i class="fa fa-expand"></i>
+					</a>
+					<a class="close-link">
+						<i class="fa fa-times"></i>
+					</a>
+				</div>
+				<div class="no-move"></div>
+			</div>
+			<div class="box-content">
+				<form id="defaultForm" method="post" action="validators.html" class="form-horizontal">
+					<fieldset>
+						<legend>Not Empty validator</legend>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">Username</label>
+							<div class="col-sm-5">
+								<input type="text" class="form-control" name="username" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">Country</label>
+							<div class="col-sm-5">
+								<select class="populate placeholder" name="country" id="s2_country">
+									<option value="">-- Select a country --</option>
+									<option value="fr">France</option>
+									<option value="de">Germany</option>
+									<option value="it">Italy</option>
+									<option value="jp">Japan</option>
+									<option value="ru">Russia</option>
+									<option value="gb">United Kingdom</option>
+									<option value="us">United State</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-9 col-sm-offset-3">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox"  name="acceptTerms" /> Accept the terms and policies
+										<i class="fa fa-square-o small"></i>
+									</label>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+					<fieldset>
+						<legend>Regular expression based validators</legend>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">Email address</label>
+							<div class="col-sm-5">
+								<input type="text" class="form-control" name="email" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">Website</label>
+							<div class="col-sm-5">
+								<input type="text" class="form-control" name="website" placeholder="http://" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">Phone number</label>
+							<div class="col-sm-5">
+								<input type="text" class="form-control" name="phoneNumber" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">Hex color</label>
+							<div class="col-sm-3">
+								<input type="text" class="form-control" name="color" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">US zip code</label>
+							<div class="col-sm-3">
+								<input type="text" class="form-control" name="zipCode" />
+							</div>
+						</div>
+					</fieldset>
+					<fieldset>
+						<legend>Identical validator</legend>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">Password</label>
+							<div class="col-sm-5">
+								<input type="password" class="form-control" name="password" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">Retype password</label>
+							<div class="col-sm-5">
+								<input type="password" class="form-control" name="confirmPassword" />
+							</div>
+						</div>
+					</fieldset>
+					<fieldset>
+						<legend>Other validators</legend>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">Ages</label>
+							<div class="col-sm-3">
+								<input type="text" class="form-control" name="ages" />
+							</div>
+						</div>
+					</fieldset>
+					<div class="form-group">
+						<div class="col-sm-9 col-sm-offset-3">
+							<button type="submit" class="btn btn-primary">Submit</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="col-xs-12 col-sm-4">
+		<div class="box">
+			<div class="box-header">
+				<div class="box-name">
+					<i class="fa fa-search"></i>
+					<span>Contextual backgrounds</span>
+				</div>
+				<div class="box-icons">
+					<a class="collapse-link">
+						<i class="fa fa-chevron-up"></i>
+					</a>
+					<a class="expand-link">
+						<i class="fa fa-expand"></i>
+					</a>
+					<a class="close-link">
+						<i class="fa fa-times"></i>
+					</a>
+				</div>
+				<div class="no-move"></div>
+			</div>
+			<div class="box-content">
+				<p class="bg-primary">Simple info</p>
+				<p class="bg-success">Message success</p>
+				<p class="bg-info">Message info</p>
+				<p class="bg-warning">Message warning</p>
+				<p class="bg-danger">Message danger</p>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+// Run Select2 plugin on elements
+function DemoSelect2(){
+	$('#s2_with_tag').select2({placeholder: "Select OS"});
+	$('#s2_country').select2();
+}
+// Run timepicker
+function DemoTimePicker(){
+	$('#input_time').timepicker({setDate: new Date()});
+}
+$(document).ready(function() {
+	// Create Wysiwig editor for textare
+	TinyMCEStart('#wysiwig_simple', null);
+	TinyMCEStart('#wysiwig_full', 'extreme');
+	// Add slider for change test input length
+	FormLayoutExampleInputLength($( ".slider-style" ));
+	// Initialize datepicker
+	$('#input_date').datepicker({setDate: new Date()});
+	// Load Timepicker plugin
+	LoadTimePickerScript(DemoTimePicker);
+	// Add tooltip to form-controls
+	$('.form-control').tooltip();
+	LoadSelect2Script(DemoSelect2);
+	// Load example of form validation
+	LoadBootstrapValidatorScript(DemoFormValidator);
+	// Add drag-n-drop feature to boxes
+	WinMove();
+});
+</script>
 <!--Start Container-->
 <div id="main" class="container-fluid">
 	<div class="row">
@@ -149,194 +425,33 @@
 				<li>
 					<a href="ajax/dashboard.html" class="ajax-link">
 						<i class="fa fa-dashboard"></i>
-						<span class="hidden-xs">Dashboard</span>
+						<span class="hidden-xs">Mon projet web</span>
 					</a>
 				</li>
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle">
 						<i class="fa fa-bar-chart-o"></i>
-						<span class="hidden-xs">Charts</span>
+						<span class="hidden-xs">Profil</span>
 					</a>
-					<ul class="dropdown-menu">
-						<li><a class="ajax-link" href="ajax/charts_xcharts.html">xCharts</a></li>
-						<li><a class="ajax-link" href="ajax/charts_flot.html">Flot Charts</a></li>
-						<li><a class="ajax-link" href="ajax/charts_google.html">Google Charts</a></li>
-						<li><a class="ajax-link" href="ajax/charts_morris.html">Morris Charts</a></li>
-						<li><a class="ajax-link" href="ajax/charts_amcharts.html">AmCharts</a></li>
-						<li><a class="ajax-link" href="ajax/charts_chartist.html">Chartist</a></li>
-						<li><a class="ajax-link" href="ajax/charts_coindesk.html">CoinDesk realtime</a></li>
-					</ul>
+					
 				</li>
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle">
 						<i class="fa fa-table"></i>
-						 <span class="hidden-xs">Tables</span>
+						 <span class="hidden-xs">Ajouter une plongée</span>
 					</a>
-					<ul class="dropdown-menu">
-						<li><a class="ajax-link" href="ajax/tables_simple.html">Simple Tables</a></li>
-						<li><a class="ajax-link" href="ajax/tables_datatables.html">Data Tables</a></li>
-						<li><a class="ajax-link" href="ajax/tables_beauty.html">Beauty Tables</a></li>
-					</ul>
+					
 				</li>
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle">
-						<i class="fa fa-pencil-square-o"></i>
-						 <span class="hidden-xs">Forms</span>
-					</a>
-					<ul class="dropdown-menu">
-						<li><a class="ajax-link" href="ajax/forms_elements.html">Elements</a></li>
-						<li><a class="ajax-link" href="ajax/forms_layouts.html">Layouts</a></li>
-						<li><a class="ajax-link" href="ajax/forms_file_uploader.html">File Uploader</a></li>
-					</ul>
-				</li>
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle">
-						<i class="fa fa-desktop"></i>
-						 <span class="hidden-xs">UI Elements</span>
-					</a>
-					<ul class="dropdown-menu">
-						<li><a class="ajax-link" href="ajax/ui_grid.html">Grid</a></li>
-						<li><a class="ajax-link" href="ajax/ui_buttons.html">Buttons</a></li>
-						<li><a class="ajax-link" href="ajax/ui_progressbars.html">Progress Bars</a></li>
-						<li><a class="ajax-link" href="ajax/ui_jquery-ui.html">Jquery UI</a></li>
-						<li><a class="ajax-link" href="ajax/ui_icons.html">Icons</a></li>
-					</ul>
-				</li>
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle">
-						<i class="fa fa-list"></i>
-						 <span class="hidden-xs">Pages</span>
-					</a>
-					<ul class="dropdown-menu">
-						<li><a href="ajax/page_login_v1.html">Login</a></li>
-						<li><a href="ajax/page_register_v1.html">Register</a></li>
-						<li><a id="locked-screen" class="submenu" href="ajax/page_locked.html">Locked Screen</a></li>
-						<li><a class="ajax-link" href="ajax/page_contacts.html">Contacts</a></li>
-						<li><a class="ajax-link" href="ajax/page_feed.html">Feed</a></li>
-						<li><a class="ajax-link add-full" href="ajax/page_messages.html">Messages</a></li>
-						<li><a class="ajax-link" href="ajax/page_pricing.html">Pricing</a></li>
-						<li><a class="ajax-link" href="ajax/page_product.html">Product</a></li>
-						<li><a class="ajax-link" href="ajax/page_invoice.html">Invoice</a></li>
-						<li><a class="ajax-link" href="ajax/page_search.html">Search Results</a></li>
-						<li><a class="ajax-link" href="ajax/page_404.html">Error 404</a></li>
-						<li><a href="ajax/page_500_v1.html">Error 500</a></li>
-					</ul>
-				</li>
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle">
-						<i class="fa fa-map-marker"></i>
-						<span class="hidden-xs">Maps</span>
-					</a>
-					<ul class="dropdown-menu">
-						<li><a class="ajax-link" href="ajax/maps.html">OpenStreetMap</a></li>
-						<li><a class="ajax-link" href="ajax/map_fullscreen.html">Fullscreen map</a></li>
-						<li><a class="ajax-link" href="ajax/map_leaflet.html">Leaflet</a></li>
-					</ul>
-				</li>
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle">
-						<i class="fa fa-picture-o"></i>
-						 <span class="hidden-xs">Gallery</span>
-					</a>
-					<ul class="dropdown-menu">
-						<li><a class="ajax-link" href="ajax/gallery_simple.html">Simple Gallery</a></li>
-						<li><a class="ajax-link" href="ajax/gallery_flickr.html">Flickr Gallery</a></li>
-					</ul>
-				</li>
-				<li>
-					 <a class="ajax-link" href="ajax/typography.html">
-						 <i class="fa fa-font"></i>
-						 <span class="hidden-xs">Typography</span>
-					</a>
-				</li>
-				 <li>
-					<a class="ajax-link" href="ajax/calendar.html">
-						 <i class="fa fa-calendar"></i>
-						 <span class="hidden-xs">Calendar</span>
-					</a>
-				 </li>
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle">
-						<i class="fa fa-picture-o"></i>
-						 <span class="hidden-xs">Multilevel menu</span>
-					</a>
-					<ul class="dropdown-menu">
-						<li><a href="#">First level menu</a></li>
-						<li><a href="#">First level menu</a></li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle">
-								<i class="fa fa-plus-square"></i>
-								<span class="hidden-xs">Second level menu group</span>
-							</a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Second level menu</a></li>
-								<li><a href="#">Second level menu</a></li>
-								<li class="dropdown">
-									<a href="#" class="dropdown-toggle">
-										<i class="fa fa-plus-square"></i>
-										<span class="hidden-xs">Three level menu group</span>
-									</a>
-									<ul class="dropdown-menu">
-										<li><a href="#">Three level menu</a></li>
-										<li><a href="#">Three level menu</a></li>
-										<li class="dropdown">
-											<a href="#" class="dropdown-toggle">
-												<i class="fa fa-plus-square"></i>
-												<span class="hidden-xs">Four level menu group</span>
-											</a>
-											<ul class="dropdown-menu">
-												<li><a href="#">Four level menu</a></li>
-												<li><a href="#">Four level menu</a></li>
-												<li class="dropdown">
-													<a href="#" class="dropdown-toggle">
-														<i class="fa fa-plus-square"></i>
-														<span class="hidden-xs">Five level menu group</span>
-													</a>
-													<ul class="dropdown-menu">
-														<li><a href="#">Five level menu</a></li>
-														<li><a href="#">Five level menu</a></li>
-														<li class="dropdown">
-															<a href="#" class="dropdown-toggle">
-																<i class="fa fa-plus-square"></i>
-																<span class="hidden-xs">Six level menu group</span>
-															</a>
-															<ul class="dropdown-menu">
-																<li><a href="#">Six level menu</a></li>
-																<li><a href="#">Six level menu</a></li>
-															</ul>
-														</li>
-													</ul>
-												</li>
-											</ul>
-										</li>
-										<li><a href="#">Three level menu</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-			</ul>
+			
 		</div>
-		<!--Start Content-->
-		<div id="content" class="col-xs-12 col-sm-10">
-			<div id="about">
-				<div class="about-inner">
-					<h4 class="page-header">Open-source admin theme for you</h4>
-					<p>DevOOPS team</p>
-					<p>Homepage - <a href="http://devoops.me" target="_blank">http://devoops.me</a></p>
-					<p>Email - <a href="mailto:devoopsme@gmail.com">devoopsme@gmail.com</a></p>
-					<p>Twitter - <a href="http://twitter.com/devoopsme" target="_blank">http://twitter.com/devoopsme</a></p>
-					<p>Donate - BTC 123Ci1ZFK5V7gyLsyVU36yPNWSB5TDqKn3</p>
-				</div>
-			</div>
-			<div class="preloader">
-				<img src="img/devoops_getdata.gif" class="devoops-getdata" alt="preloader"/>
-			</div>
-			<div id="ajax-content"></div>
-		</div>
-		<!--End Content-->
+		
 	</div>
+</div>
+
+
+<div>
+    
+    <?php echo $query[1]->idflore ?>
 </div>
 <!--End Container-->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
