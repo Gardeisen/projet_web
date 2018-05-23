@@ -39,7 +39,7 @@
                
 	</head>
         <body>
-            <?php echo validation_errors(); ?>
+           
 
             <?php echo form_open('User/inscriptionvalid'); ?>
             <form>
@@ -54,40 +54,42 @@
 					</div>
 					<div class="form-group">
 						<label class="control-label">Nom Utilisateur</label>
-						<input type="text" class="form-control" name="NomUtilisateur" value="<?php echo set_value('NomUtilisateur'); ?>" size="50" /> 
+						<input type="text" class="form-control" name="NomUtilisateur" value="<?php echo set_value('NomUtilisateur'); ?>" size="50" required/> 
+                                                <?php echo form_error('NomUtilisateur'); ?>
 					</div>
 					<div class="form-group">
 						<label class="control-label">Nom</label>
-                                                <input type="text" class="form-control" name="Nom" value="<?php echo set_value('Nom'); ?>" size="50" /> 
+                                                <input type="text" class="form-control" name="Nom" value="<?php echo set_value('Nom'); ?>" size="50" required/> 
 					</div>
                                         
                                         <div class="form-group">
 						<label class="control-label">Prenom</label>
-                                                <input type="text" class="form-control" name="Prenom" value="<?php echo set_value('Prenom'); ?>" size="50" /> 
+                                                <input type="text" class="form-control" name="Prenom" value="<?php echo set_value('Prenom'); ?>" size="50" required/> 
 					</div>
                                     
                                         <div class="form-group">
 						<label class="control-label">Niveau de Plongée</label>
-                                                <input type="text" class="form-control" name="NiveauPlongee" value="<?php echo set_value('NiveauPlongee'); ?>" size="50" /> 
+                                                <input type="text" class="form-control" name="NiveauPlongee" value="<?php echo set_value('NiveauPlongee'); ?>" size="50" required/> 
 					</div>
                                     
 					<div class="form-group">
 						<label class="control-label">Mot de passe</label>
-						<input type="password" class="form-control" name="password" value="<?php echo set_value('password'); ?>" size="50"/>
+						<input type="password" class="form-control" name="password" value="<?php echo set_value('password'); ?>" size="50" required/>
 					</div>
                                     
                                         <div class="form-group">
 						<label class="control-label">Confirmation du Mot de passe</label>
-						<input type="password" class="form-control" name="passconf" value="<?php echo set_value('passconf'); ?>" size="50"/>
+						<input type="password" class="form-control" name="passconf" value="<?php echo set_value('passconf'); ?>" size="50" required/>
+                                                <?php echo form_error('passconf'); ?>
 					</div>
 					
-					<div><input type="submit" value="Submit" /></div>
+					<div class="text-center"><input class="btn btn-primary" type="submit" value="Inscription" /></div>
                                     
                                     
                                     
                                     <div class="text-center">
                                 <br>
-                                 <h1 style="color:darkslategrey;"> Mon Carnet de Bord en Ligne </h1>
+                                 <h1 style="color:darkslategrey; " > Mon Carnet de Bord en Ligne </h1>
                                     </div>
                                   
 				</div>

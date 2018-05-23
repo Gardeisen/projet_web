@@ -9,12 +9,26 @@ class Plongee extends CI_Controller{
     
     public function affichermesplongees(){
         
-        $this->load->view('plongee/mapageaccueil');
+       if( get_cookie('nom_utilisateur')!=''){
+          
+           $this->load->view('plongee/mapageaccueil');
+           
+    }
+    else {
+             $this->load->view('user/connexion');
+    }
     }
     
     public function ajouterplongee(){
         
-        $this->load->view('plongee/ajout_plongee');
+        if( get_cookie('nom_utilisateur')!=''){
+          
+           $this->load->view('plongee/ajout_plongee');
+           
+    }
+    else {
+             $this->load->view('user/connexion');
+    }
     }
     
 }

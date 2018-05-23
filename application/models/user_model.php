@@ -20,7 +20,18 @@ class user_model extends CI_Model{
  	->set('niveaudeplongee', $data['NiveauPlongee'])
  	->insert($this->table);
 
-
 }
+
+    public function verifmotdepasse($data) {
+        
+        $this->load->database('default');
+        $result = $this->db->select('iduser','motpasse')
+                        ->from($this->table)
+                        ->where('users.iduser',(int)$data["NomUtilisateur"])
+                        ->where('users.motpasse',$data["password"])
+                        ->get()
+                        ->result();
+        return $result;
+    }
     
 }

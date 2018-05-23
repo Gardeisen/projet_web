@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
    
 	<head>
@@ -42,8 +43,8 @@
                
 	</head>
 
-    
 
+<?php echo form_open('User/validconnexion'); ?>
 <div  class="container-fluid" >
 	<div id="page-login" class="row" >
 		<div class="col-xs-12 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
@@ -55,15 +56,13 @@
 					</div>
 					<div class="form-group">
 						<label class="control-label">Nom Utilisateur</label>
-						<input type="text" class="form-control" name="username" />
+						<input type="text" class="form-control" name="NomUtilisateur" />
 					</div>
 					<div class="form-group">
 						<label class="control-label">Mot de passe</label>
 						<input type="password" class="form-control" name="password" />
 					</div>
-					<div class="text-center">
-                                            <a href="<?php echo site_url("plongee/affichermesplongees")?>" class="btn btn-primary">Connexion</a>
-					</div>
+					<div class="text-center"><input class="btn btn-primary" type="submit" value="Connexion" /></div>
                                     <div class="text-center">
                                 <br>
                                  <h1 style="color:darkslategrey;"> Mon Carnet de Bord en Ligne </h1>

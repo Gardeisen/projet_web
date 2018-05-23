@@ -66,7 +66,7 @@
 							
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle account" data-toggle="dropdown">
-                                                                    <h3><span>Mon Profil</span></h3>
+                                                                    <h3><span>Profil <?php echo get_cookie('nom_utilisateur');?></span></h3>
 									
 								</a>
 								
@@ -126,6 +126,20 @@
 				</div>
 			</div>
 			<div class="preloader">
+                            <div class="text-center">
+                                <h1>Mes Plongées</h1>
+                               
+                            </div>
+                            
+                            <div class="form-group">
+						<div class="col-sm-9 col-sm-offset-3">
+                                                    <a href="#" >
+                                                        <button class="btn btn-primary">Ajouter une plongée</button>
+                                                    </a> 
+						</div>
+                            </div>
+                            
+                            
 				<img src="img/devoops_getdata.gif" class="devoops-getdata" alt="preloader"/>
 			</div>
 			<div id="ajax-content"></div>

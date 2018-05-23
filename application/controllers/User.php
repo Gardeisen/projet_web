@@ -10,7 +10,37 @@ class User extends CI_Controller{
     
     public function pageconnexion (){
        
-        $this->load->view('user/connexion');
+        if( get_cookie('nom_utilisateur')==''){
+          
+             $this->load->view('user/connexion');
+           
+           
+    }
+    else {
+            $this->load->view('plongee/mapageaccueil');
+    }
+        
+        
+    }
+    
+    public function validconnexion(){
+
+        $data=array(
+            "NomUtilisateur" => htmlspecialchars($_POST['NomUtilisateur']),
+            "password" => htmlspecialchars($_POST['password']),
+        );
+        $query = $this->user_model->verifmotdepasse($data);
+       
+        if (empty($query)){
+            $this->load->view('user/connexion');
+            
+        }
+        else {
+            
+            set_cookie('nom_utilisateur', $data['NomUtilisateur'],'3600');
+          
+            $this->load->view('plongee/mapageaccueil');
+        }
         
     }
   
@@ -22,19 +52,24 @@ class User extends CI_Controller{
     
     public function deconnexion(){
         
+        delete_cookie('nom_utilisateur');
         $this->load->view('user/deconnexion');
     }
     public function inscriptionvalid(){
-           $this->load->library('form_validation');
            
-           $this->load->database('default');
-           $this->load->helper('form');
-
-
            
-          
-           $this->form_validation->set_rules('password', 'Mot de passe', 'required');
-           $this->form_validation->set_rules('passconf', 'Confirmation du Mot de passe', 'required|matches[password]');
+           $this->form_validation->set_rules('passconf', 'Confirmation du Mot de passe', 'required|matches[password]',
+                   array(
+                       'matches[password]' => "le mot de passe que vous avez entrez n'est pas le même"
+                   )
+                   );
+           
+           $this->form_validation->set_rules('NomUtilisateur','Nom Utilisateur', 'is_unique[users.iduser]',
+           array(
+               'is_unique' => "nom utilisateur déja choisit"
+           )
+            );
+           
            if ($this->form_validation->run() == FALSE)
                 {
                         $this->load->view('user/inscription');
@@ -56,3 +91,4 @@ class User extends CI_Controller{
     }
    
 }
+                
