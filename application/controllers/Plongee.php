@@ -12,4 +12,9 @@ class Plongee extends CI_Controller{
         $this->load->view('plongee/mapageaccueil');
     }
     
+    public function ajouterplongee(){
+        
+        $this->load->view('plongee/ajout_plongee');
+    }
+    
 }

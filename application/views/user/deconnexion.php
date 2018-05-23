@@ -4,7 +4,7 @@
 	<head>
         
 		<meta charset="utf-8">
-		<title>Mon carnet de Plongées Connexion</title>
+		<title>Déconnexion</title>
 		<meta name="description" content="description">
 		<meta name="author" content="Evgeniya">
 		<meta name="keyword" content="keywords">
@@ -51,30 +51,17 @@
 			<div class="box">
 				<div class="box-content">
 					<div class="text-center">
-						<h2 class="page-header">Connexion </h2>
+						<h2 class="page-header">Déconnexion </h2>
 					</div>
-					<div class="form-group">
-						<label class="control-label">Nom Utilisateur</label>
-						<input type="text" class="form-control" name="username" />
-					</div>
-					<div class="form-group">
-						<label class="control-label">Mot de passe</label>
-						<input type="password" class="form-control" name="password" />
-					</div>
+					
+					
 					<div class="text-center">
-                                            <a href="<?php echo site_url("plongee/affichermesplongees")?>" class="btn btn-primary">Connexion</a>
+                                            <a href="<?php echo site_url("user/pageconnexion")?>" class="btn btn-primary">Me connecter</a>
 					</div>
                                     <div class="text-center">
                                 <br>
                                  <h1 style="color:darkslategrey;"> Mon Carnet de Bord en Ligne </h1>
                                     </div>
-                                    <div class="text-center">
-                                        <h4>
-                                           <a href="<?php echo site_url("user/inscription")?>" class="txt-default">Vous n'êtes pas déjà inscrit?</a>
-                                        </h4>
-                                        
-                                    </div>
-                                    
 				</div>
                         </div>
                             

@@ -12,11 +12,12 @@ class user_model extends CI_Model{
     public function insert($data) {
         
     $this->load->database('default');
-
+    
  	$this->db->set('nom', $data['Nom'])
  	->set('motpasse', $data['password'])
- 	->set('prenom', $data['prenom'])
- 	->set('ville', $data['ville'])
+        ->set('iduser', $data['NomUtilisateur'])
+ 	->set('prenom', $data['Prenom'])
+ 	->set('niveaudeplongee', $data['NiveauPlongee'])
  	->insert($this->table);
 
 

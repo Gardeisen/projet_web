@@ -46,11 +46,7 @@
 <div class="container-fluid">
 	<div id="page-login" class="row">
 		<div class="col-xs-12 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
-			<div class="text-center">
-                            <h3>
-                                <a href="../user/pageconnexion" class="txt-default">Vous avez déjà un compte? </a>
-                            </h3>
-			</div>
+			
 			<div class="box">
 				<div class="box-content">
 					<div class="text-center">
@@ -58,7 +54,7 @@
 					</div>
 					<div class="form-group">
 						<label class="control-label">Nom Utilisateur</label>
-						<input type="text" class="form-control" name="NomUilisateur" value="<?php echo set_value('NomUtilisateur'); ?>" size="50" /> 
+						<input type="text" class="form-control" name="NomUtilisateur" value="<?php echo set_value('NomUtilisateur'); ?>" size="50" /> 
 					</div>
 					<div class="form-group">
 						<label class="control-label">Nom</label>
@@ -85,9 +81,15 @@
 						<input type="password" class="form-control" name="passconf" value="<?php echo set_value('passconf'); ?>" size="50"/>
 					</div>
 					
-					<div class="text-center">
-						<a href="../index_v1.html" class="btn btn-primary">Inscription</a>
-					</div>
+					<div><input type="submit" value="Submit" /></div>
+                                    
+                                    
+                                    
+                                    <div class="text-center">
+                                <br>
+                                 <h1 style="color:darkslategrey;"> Mon Carnet de Bord en Ligne </h1>
+                                    </div>
+                                  
 				</div>
 			</div>
 		</div>
