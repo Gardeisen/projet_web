@@ -23,7 +23,9 @@ class Plongee extends CI_Controller{
         
         if( get_cookie('nom_utilisateur')!=''){
           
-           $this->load->view('plongee/ajout_plongee');
+           $data['faune']= $this->faune_model->getall();
+           $this->load->view('plongee/ajout_plongee',$data);
+           
            
     }
     else {

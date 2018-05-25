@@ -54,24 +54,33 @@
 					</div>
 					<div class="form-group">
 						<label class="control-label">Nom Utilisateur</label>
-						<input type="text" class="form-control" name="NomUtilisateur" value="<?php echo set_value('NomUtilisateur'); ?>" size="50" required/> 
+						<input type="text" class="form-control" name="NomUtilisateur" value="<?php echo set_value('NomUtilisateur'); ?>" size="30" required/> 
                                                 <?php echo form_error('NomUtilisateur'); ?>
 					</div>
 					<div class="form-group">
 						<label class="control-label">Nom</label>
-                                                <input type="text" class="form-control" name="Nom" value="<?php echo set_value('Nom'); ?>" size="50" required/> 
+                                                <input type="text" class="form-control" name="Nom" value="<?php echo set_value('Nom'); ?>" size="30" required/> 
 					</div>
                                         
                                         <div class="form-group">
 						<label class="control-label">Prenom</label>
-                                                <input type="text" class="form-control" name="Prenom" value="<?php echo set_value('Prenom'); ?>" size="50" required/> 
+                                                <input type="text" class="form-control" name="Prenom" value="<?php echo set_value('Prenom'); ?>" size="30" required/> 
 					</div>
                                     
-                                        <div class="form-group">
-						<label class="control-label">Niveau de Plongée</label>
-                                                <input type="text" class="form-control" name="NiveauPlongee" value="<?php echo set_value('NiveauPlongee'); ?>" size="50" required/> 
+                                        <div class="row form-group">
+					<div class="col-sm-12">
+                                            <label class="control-label">Niveau de Plongée</label>
+                                            <select class="form-control" name="NiveauPlongee">
+							<option value="1">1</option>
+							<option value="2">2</option>
+                                                        <option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+                                                        
+						</select>
 					</div>
-                                    
+                                        </div>
+                                        
 					<div class="form-group">
 						<label class="control-label">Mot de passe</label>
 						<input type="password" class="form-control" name="password" value="<?php echo set_value('password'); ?>" size="50" required/>
@@ -83,7 +92,7 @@
                                                 <?php echo form_error('passconf'); ?>
 					</div>
 					
-					<div class="text-center"><input class="btn btn-primary" type="submit" value="Inscription" /></div>
+					<div class="text-center"><input class="btn btn-primary btn-success btn-block" type="submit" value="inscription" /></div>
                                     
                                     
                                     

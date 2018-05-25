@@ -19,7 +19,13 @@ class flore_model extends CI_Model{
                     ->result();
 
 }
-
+    public function insert($data){
+        
+        $this->db->set('nom', $data['nom'])
+        ->set('description', $data['description'])
+ 	->insert($this->table);
+        
+    }
 
     }
      

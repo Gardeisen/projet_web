@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Ajouter de la faune</title>
+		<title>Ajouter un moniteur</title>
 		<meta name="description" content="description">
 		<meta name="author" content="DevOOPS">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -63,7 +63,7 @@
 						<ul class="nav navbar-nav pull-right ">
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle account" data-toggle="dropdown">
-                                                                    <h3><span>Mon Profil</span></h3>
+                                                                    <h3><span>Mon Profil <?php echo get_cookie('nom_utilisateur');?></span></h3>
 									
 								</a>
 								
@@ -85,6 +85,7 @@
 					<a href="<?php echo site_url("plongee/affichermesplongees")?>" class="ajax-link">
 						
 						<span class="hidden-xs">Mes Plongées </span>
+
 					</a>
 				</li>
                                 <li>
@@ -110,85 +111,60 @@
 				</li>
 			</ul>
 		</div>
-            
+        
+            <?php echo form_open('Faune/insert'); ?>
+    
    
 		<!--Start Content-->
+                <div class="container-fluid" >
 		<div id="content" class="col-xs-12 col-sm-10">
                     
-                  
-                 
-			<div id="about">
-				<div class="about-inner">
-					<h4 class="page-header">Open-source admin theme for you</h4>
-					<p>DevOOPS team</p>
-					<p>Homepage - <a href="http://devoops.me" target="_blank">http://devoops.me</a></p>
-					<p>Email - <a href="mailto:devoopsme@gmail.com">devoopsme@gmail.com</a></p>
-					<p>Twitter - <a href="http://twitter.com/devoopsme" target="_blank">http://twitter.com/devoopsme</a></p>
-					<p>Donate - BTC 123Ci1ZFK5V7gyLsyVU36yPNWSB5TDqKn3</p>
-				</div>
-			</div>
-<div class="container-fluid" >
-   
-  			
-                            
-            <div class="row">
-                 <div class="col-xs-12 col-sm-8">
-                    
-                     
-			
-			<div class="box-content">
-				<form id="defaultForm" method="post" action="validators.html" class="form-horizontal">
-					<fieldset>
-						<legend>Ajouter de la faune</legend>
-						<div class="form-group">
-							<label class="col-sm-3 control-label">Champs 1</label>
-							<div class="col-sm-5">
-								<input type="text" class="form-control" name="username" />
-							</div>
-						</div>
-                                                <div class="form-group">
-							<label class="col-sm-3 control-label">Champs 2</label>
-							<div class="col-sm-5">
-								<input type="text" class="form-control" name="username" />
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="col-sm-3 control-label">Champs 3</label>
-							<div class="col-sm-5">
-                                                            <textarea type="text" class="form-control" name="username" ></textarea>
-							</div>
-						</div>
-                                                
+                    <div class="container-fluid" >
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-8">
+                                <div class="box-content">
+				
+                                    <form id="defaultForm" method="post" action="validators.html" class="form-horizontal">
+					
+                                        <fieldset>
+                                           
+                                            <legend>Ajouter de Faune</legend>
 						
+                                            <div class="form-group">
+							<label class="col-sm-5 control-label">Nom</label>
+							<div class="col-sm-5">
+                                                            <input type="text" class="form-control" name="nom" value="<?php echo set_value('nom'); ?>" size="25" required />
+                                                            <?php echo form_error('nom'); ?>
+							</div>
+						</div>
+                                            
+						<div class="form-group">
+							<label class="col-sm-5 control-label">Description</label>
+							<div class="col-sm-5">
+                                                            <textarea type="text" class="form-control" name="description" value="<?php echo set_value('description'); ?>"size="100" ></textarea>
+                                                            
+							</div>
+						</div>
+                                           
 					</fieldset>
 					
 					<div class="form-group">
 						<div class="col-sm-9 col-sm-offset-3">
-							<button type="submit" class="btn btn-primary">Submit</button>
+							<button type="submit" class="btn btn-primary btn-success">Submit</button>
 						</div>
 					</div>
-				</form>
-			</div>
-		
-	</div>
-	
-</div>   
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-			</div>
-			<div id="ajax-content"></div>
-                    
-		</div>
-		<!--End Content-->
-	</div>
+			
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
 </div>
-<!--End Container-->
-        
+</div>
+
+		<!--End Content-->
+
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <!--<script src="http://code.jquery.com/jquery.js"></script>-->
@@ -203,3 +179,4 @@
 <script src="<?php echo base_url() ?>devoops-master/js/devoops.js"></script>
 </body>
 </html>
+

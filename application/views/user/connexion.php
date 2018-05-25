@@ -56,13 +56,13 @@
 					</div>
 					<div class="form-group">
 						<label class="control-label">Nom Utilisateur</label>
-						<input type="text" class="form-control" name="NomUtilisateur" />
+                                                <input type="text" class="form-control" name="NomUtilisateur" required/>
 					</div>
 					<div class="form-group">
 						<label class="control-label">Mot de passe</label>
 						<input type="password" class="form-control" name="password" />
 					</div>
-					<div class="text-center"><input class="btn btn-primary" type="submit" value="Connexion" /></div>
+					<div class="text-center"><input class="btn btn-primary btn-success btn-block" type="submit" value="Connexion" required /></div>
                                     <div class="text-center">
                                 <br>
                                  <h1 style="color:darkslategrey;"> Mon Carnet de Bord en Ligne </h1>

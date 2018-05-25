@@ -130,14 +130,11 @@
                                 <h1>Mes Plongées</h1>
                                
                             </div>
-                            
-                            <div class="form-group">
-						<div class="col-sm-9 col-sm-offset-3">
-                                                    <a href="#" >
-                                                        <button class="btn btn-primary">Ajouter une plongée</button>
-                                                    </a> 
-						</div>
-                            </div>
+                          
+                             <a href="<?php echo site_url("plongee/ajouterplongee")?>" >
+                                 <button class="btn btn-primary  btn-block btn-success btn-lg">Ajouter une plongée</button>
+                              </a> 
+					
                             
                             
 				<img src="img/devoops_getdata.gif" class="devoops-getdata" alt="preloader"/>

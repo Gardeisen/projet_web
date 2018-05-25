@@ -11,11 +11,11 @@ class user_model extends CI_Model{
     
     public function insert($data) {
         
-    $this->load->database('default');
+  
     
  	$this->db->set('nom', $data['Nom'])
  	->set('motpasse', $data['password'])
-        ->set('iduser', $data['NomUtilisateur'])
+        ->set('nomutilisateur', $data['NomUtilisateur'])
  	->set('prenom', $data['Prenom'])
  	->set('niveaudeplongee', $data['NiveauPlongee'])
  	->insert($this->table);
@@ -24,10 +24,9 @@ class user_model extends CI_Model{
 
     public function verifmotdepasse($data) {
         
-        $this->load->database('default');
-        $result = $this->db->select('iduser','motpasse')
+        $result = $this->db->select('nomutilisateur','motpasse')
                         ->from($this->table)
-                        ->where('users.iduser',(int)$data["NomUtilisateur"])
+                        ->where('users.nomutilisateur',$data["NomUtilisateur"])
                         ->where('users.motpasse',$data["password"])
                         ->get()
                         ->result();

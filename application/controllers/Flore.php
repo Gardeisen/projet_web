@@ -1,14 +1,15 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Faune extends CI_Controller{
+class Flore extends CI_Controller{
     
     
     public function __construct() {
         parent::__construct();
        
     } 
+   
     
-    public function ajouterfaune (){
+    public function ajouterflore (){
        
         if( get_cookie('nom_utilisateur')==''){
           
@@ -17,9 +18,9 @@ class Faune extends CI_Controller{
            
     }
     else {
-            $this->load->view('faune/ajout_faune');
+            $this->load->view('flore/ajout_flore');
     }
-    }  
+    }   
     
     public function insert(){
         
@@ -27,7 +28,7 @@ class Faune extends CI_Controller{
             "nom"=> htmlspecialchars($_POST['nom']),
             "description"=> htmlspecialchars($_POST['description']),
         );
-           $this->faune_model->insert($data);
+           $this->flore_model->insert($data);
          if( get_cookie('nom_utilisateur')==''){
           
              $this->load->view('user/connexion');
@@ -38,4 +39,6 @@ class Faune extends CI_Controller{
             $this->load->view('plongee/ajout_plongee');
     }
     }
-}
+    
+    
+}    

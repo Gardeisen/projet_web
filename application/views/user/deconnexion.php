@@ -56,7 +56,7 @@
 					
 					
 					<div class="text-center">
-                                            <a href="<?php echo site_url("user/pageconnexion")?>" class="btn btn-primary">Me connecter</a>
+                                            <a href="<?php echo site_url("user/pageconnexion")?>" class="btn btn-primary btn-success btn-block">- Me reconnecter -</a>
 					</div>
                                     <div class="text-center">
                                 <br>

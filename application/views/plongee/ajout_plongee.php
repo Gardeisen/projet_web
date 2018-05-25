@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Ajouter de la flore</title>
+		<title>Ajouter une plongée</title>
 		<meta name="description" content="description">
 		<meta name="author" content="DevOOPS">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -63,7 +63,7 @@
 						<ul class="nav navbar-nav pull-right ">
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle account" data-toggle="dropdown">
-                                                                    <h3><span>Mon Profil</span></h3>
+                                                                    <h3><span>Mon Profil <?php echo get_cookie('nom_utilisateur');?></span></h3>
 									
 								</a>
 								
@@ -128,44 +128,96 @@
 					<p>Donate - BTC 123Ci1ZFK5V7gyLsyVU36yPNWSB5TDqKn3</p>
 				</div>
 			</div>
-<div class="container-fluid" >
-   
-  			
-                            
-            <div class="row">
-                 <div class="col-xs-12 col-sm-8">
                     
-                     
-			
-			<div class="box-content">
+                    
+                    
+<div class="container-fluid" >
+   <div class="row">
+                 <div class="col-xs-12 col-sm-8">
+                   <div class="box-content">
 				<form id="defaultForm" method="post" action="validators.html" class="form-horizontal">
 					<fieldset>
-						<legend>Ajouter une nouvelle plongée</legend>
+                                            <legend>Ajouter une nouvelle plongée</legend>
 						<div class="form-group">
-							<label class="col-sm-3 control-label">Champs 1</label>
+							<label class="col-sm-3 control-label">Date de la Plongée</label>
 							<div class="col-sm-5">
 								<input type="text" class="form-control" name="username" />
 							</div>
 						</div>
                                                 <div class="form-group">
-							<label class="col-sm-3 control-label">Champs 2</label>
+							<label class="col-sm-3 control-label">Profondeur</label>
 							<div class="col-sm-5">
-								<input type="text" class="form-control" name="username" />
+                                                            <input type="float" class="form-control" name="profondeur" required />
+                                                            <?php echo form_error('profondeur'); ?>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-sm-3 control-label">Champs 3</label>
+							<label class="col-sm-3 control-label">Condition de Plongée</label>
 							<div class="col-sm-5">
                                                             <textarea type="text" class="form-control" name="username" ></textarea>
 							</div>
 						</div>
-                                                
+                                            <div class="form-group">
+							<label class="col-sm-3 control-label">Nom Moniteur </label> 
+                                                        <a href="<?php echo site_url("moniteur/ajoutermoniteur")?>">
+                                                        <button type="button" class="btn btn-primary btn-xs" />nouveau</button>
+                                                        </a>
+							<div class="col-sm-5">
+                                                            <input type="text" class="form-control" name="nommono" required>
+                                                            <?php echo form_error('nommono'); ?>
+							</div>
+                                                        
+						</div>
+                                                <div class="form-group">
+							<label class="col-sm-3 control-label">Nom du site</label>
+                                                        <a href="<?php echo site_url("site/ajoutersite")?>">
+                                                        <button type="button" class="btn btn-primary btn-xs" />nouveau</button>
+                                                        </a>
+							<div class="col-sm-5">
+                                                            <input type="text" class="form-control" name="username" >
+							</div>
+						</div>
+                                            
+                                                <div class="form-group">
+							<label class="col-sm-3 control-label"  >La Faune vue</label>
+                                                        <a href="<?php echo site_url("faune/ajouterfaune")?>">
+                                                        <button type="button" class="btn btn-primary btn-xs" />nouvelle faune</button>
+                                                        </a>
+							<div class="col-sm-5">
+                                                            <select class="form-control" name="faune">
+                                                                
+                                                           <?php
+                                                           
+                                                                    foreach ($faune as $item) {
+                                                                      
+                                                                        echo "<option value = $item->nom>$item->nom </option>";
+                                                                    }
+                                                                    ?>
+                                                        
+                                                            </select>
+							</div>
+						</div>
+                                            
+                                                <div class="form-group">
+							<label class="col-sm-3 control-label">La Flore vue</label>
+                                                        <a href="<?php echo site_url("flore/ajouterflore")?>">
+                                                        <button type="button" class="btn btn-primary btn-xs" />nouvelle flore</button>
+                                                        </a>
+							<div class="col-sm-5">
+                                                            <select multiple name="flore[]">
+                                                                <option value="algue1">algue 1</option>
+                                                                <option value="algue">algue 2</option>
+                                                                <option value="coreaux1">coreaux 1</option>
+                                                                <option value="coreaux2">coreaux2</option>
+                                                            </select>
+							</div>
+						</div>
 						
 					</fieldset>
 					
 					<div class="form-group">
 						<div class="col-sm-9 col-sm-offset-3">
-							<button type="submit" class="btn btn-primary">Submit</button>
+							<button type="submit" class="btn btn-primary btn-success">Submit</button>
 						</div>
 					</div>
 				</form>

@@ -2,4 +2,28 @@
 
 class faune_model extends CI_Model{
     
+     protected $table ='faune';
+    
+     public function __construct() {
+        parent::__construct();
+        
+    } 
+    
+    public function getall(){
+         $this->db->select('*')
+                ->from($this->table)
+                ->get()
+                ->result();
+       
+    }
+    
+    public function insert($data){
+        
+        $this->db->set('nom', $data['nom'])
+        ->set('description', $data['description'])
+ 	->insert($this->table);
+        
+    }
+
+    
 }

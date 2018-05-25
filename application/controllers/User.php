@@ -46,7 +46,7 @@ class User extends CI_Controller{
   
     public function inscription(){
        
-         $this->load->library('form_validation');
+         
         $this->load->view('user/inscription');
     }
     
@@ -57,16 +57,12 @@ class User extends CI_Controller{
     }
     public function inscriptionvalid(){
            
+        
            
-           $this->form_validation->set_rules('passconf', 'Confirmation du Mot de passe', 'required|matches[password]',
-                   array(
-                       'matches[password]' => "le mot de passe que vous avez entrez n'est pas le même"
-                   )
-                   );
            
-           $this->form_validation->set_rules('NomUtilisateur','Nom Utilisateur', 'is_unique[users.iduser]',
+           $this->form_validation->set_rules('NomUtilisateur','Nom Utilisateur', 'is_unique[users.nomutilisateur]',
            array(
-               'is_unique' => "nom utilisateur déja choisit"
+               'is_unique' => "nom utilisateur déjà choisit"
            )
             );
            
@@ -86,7 +82,8 @@ class User extends CI_Controller{
                         );
     
                        $this->user_model->insert($data);
-                        $this->load->view('plongee/mapageaccueil');
+                       set_cookie('nom_utilisateur', $data['NomUtilisateur'],'3600');
+                       $this->load->view('plongee/mapageaccueil');
                 }
     }
    
