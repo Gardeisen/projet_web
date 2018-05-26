@@ -28,11 +28,7 @@ font-family: "Righteous",cursive;
 display: block;
 font-size: 20px;
 line-height: 50px;
-  background: url(../img/logo.png) right 42px no-repeat;
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s;
+  
 }
 #logo a:hover {
   background-position: right 25px;
@@ -833,7 +829,7 @@ ul.DTTT_dropdown.dropdown-menu > li:hover > a {
   color: #505559;
   border-color: #CBCBCB;
 }
-.txt-default {color: #D8D8D8;}
+
 .progress-bar-primary .ui-widget-header, .bg-primary, .btn-primary, .btn-primary.disabled, .btn-primary[disabled], fieldset[disabled] .btn-primary, .btn-primary.disabled:hover, .btn-primary[disabled]:hover, fieldset[disabled] .btn-primary:hover, .btn-primary.disabled:focus, .btn-primary[disabled]:focus, fieldset[disabled] .btn-primary:focus, .btn-primary.disabled:active, .btn-primary[disabled]:active, fieldset[disabled] .btn-primary:active, .btn-primary.disabled.active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary.active,
 .table > thead > tr > td.primary, .table > tbody > tr > td.primary, .table > tfoot > tr > td.primary, .table > thead > tr > th.primary, .table > tbody > tr > th.primary, .table > tfoot > tr > th.primary, .table > thead > tr.primary > td, .table > tbody > tr.primary > td, .table > tfoot > tr.primary > td, .table > thead > tr.primary > th, .table > tbody > tr.primary > th, .table > tfoot > tr.primary > th {
   background-color: #6AA6D6;
