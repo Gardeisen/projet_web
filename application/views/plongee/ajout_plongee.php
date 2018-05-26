@@ -184,13 +184,13 @@
                                                         <button type="button" class="btn btn-primary btn-xs" />nouvelle faune</button>
                                                         </a>
 							<div class="col-sm-5">
-                                                            <select class="form-control" name="faune">
+                                                            <select class="form-control" name="idfaune">
                                                                 
                                                            <?php
                                                            
                                                                     foreach ($faune as $item) {
                                                                       
-                                                                        echo "<option value = $item->nom>$item->nom </option>";
+                                                                        echo "<option value = $item->idfaune>$item->nom </option>";
                                                                     }
                                                                     ?>
                                                         

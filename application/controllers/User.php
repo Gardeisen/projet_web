@@ -25,9 +25,13 @@ class User extends CI_Controller{
     
     public function validconnexion(){
 
+        define("PREFIXE", "tunauras");
+        define("SUFFIXE", "paslemotdepasse");
+        $mdp= md5( sha1(PREFIXE) . $_POST['password'] . sha1(SUFFIXE) );
+        
         $data=array(
             "NomUtilisateur" => htmlspecialchars($_POST['NomUtilisateur']),
-            "password" => htmlspecialchars($_POST['password']),
+            "password" => $mdp,
         );
         $query = $this->user_model->verifmotdepasse($data);
        
@@ -65,6 +69,8 @@ class User extends CI_Controller{
                'is_unique' => "nom utilisateur déjà choisit"
            )
             );
+ 
+
            
            if ($this->form_validation->run() == FALSE)
                 {
@@ -72,13 +78,16 @@ class User extends CI_Controller{
                 }
                 else
                 {
-                      
+                        define("PREFIXE", "tunauras");
+                        define("SUFFIXE", "paslemotdepasse");
+                        $mdp= md5( sha1(PREFIXE) . $_POST['password'] . sha1(SUFFIXE) );
+                        
                        $data=array(
                         "NomUtilisateur" => htmlspecialchars($_POST['NomUtilisateur']),
                         "Nom"=> htmlspecialchars($_POST['Nom']),
                         "Prenom"=> htmlspecialchars($_POST['Prenom']),
                         "NiveauPlongee" => htmlspecialchars($_POST['NiveauPlongee']),
-                        "password" => htmlspecialchars($_POST['password']),
+                        "password" => $mdp,
                         );
     
                        $this->user_model->insert($data);
@@ -86,6 +95,12 @@ class User extends CI_Controller{
                        $this->load->view('plongee/mapageaccueil');
                 }
     }
-   
+ 
+    public function test(){
+       
+         
+        $this->load->view('user/test');
+    }
+
 }
-                
+  

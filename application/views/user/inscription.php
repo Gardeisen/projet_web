@@ -41,71 +41,92 @@
         <body>
            
 
-            <?php echo form_open('User/inscriptionvalid'); ?>
-            <form>
+<?php echo form_open('User/inscriptionvalid'); ?>
+<form name="form" onSubmit="return verify(password, passconf)">
 <div class="container-fluid">
-	<div id="page-login" class="row">
-		<div class="col-xs-12 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
-			
-			<div class="box">
-				<div class="box-content">
-					<div class="text-center">
-						<h2 class="page-header">Inscription</h2>
-					</div>
-					<div class="form-group">
-						<label class="control-label">Nom Utilisateur</label>
-						<input type="text" class="form-control" name="NomUtilisateur" value="<?php echo set_value('NomUtilisateur'); ?>" size="30" required/> 
-                                                <?php echo form_error('NomUtilisateur'); ?>
-					</div>
-					<div class="form-group">
-						<label class="control-label">Nom</label>
-                                                <input type="text" class="form-control" name="Nom" value="<?php echo set_value('Nom'); ?>" size="30" required/> 
-					</div>
-                                        
-                                        <div class="form-group">
-						<label class="control-label">Prenom</label>
-                                                <input type="text" class="form-control" name="Prenom" value="<?php echo set_value('Prenom'); ?>" size="30" required/> 
-					</div>
-                                    
-                                        <div class="row form-group">
-					<div class="col-sm-12">
-                                            <label class="control-label">Niveau de Plongée</label>
-                                            <select class="form-control" name="NiveauPlongee">
-							<option value="1">1</option>
-							<option value="2">2</option>
-                                                        <option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-                                                        
-						</select>
-					</div>
-                                        </div>
-                                        
-					<div class="form-group">
-						<label class="control-label">Mot de passe</label>
-						<input type="password" class="form-control" name="password" value="<?php echo set_value('password'); ?>" size="50" required/>
-					</div>
-                                    
-                                        <div class="form-group">
-						<label class="control-label">Confirmation du Mot de passe</label>
-						<input type="password" class="form-control" name="passconf" value="<?php echo set_value('passconf'); ?>" size="50" required/>
-                                                <?php echo form_error('passconf'); ?>
-					</div>
-					
-					<div class="text-center"><input class="btn btn-primary btn-success btn-block" type="submit" value="inscription" /></div>
-                                    
-                                    
-                                    
-                                    <div class="text-center">
-                                <br>
-                                 <h1 style="color:darkslategrey; " > Mon Carnet de Bord en Ligne </h1>
-                                    </div>
-                                  
-				</div>
-			</div>
-		</div>
-	</div>
+    <div id="page-login" class="row">
+        <div class="col-xs-12 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+            <div class="box">
+                <div class="box-content">
+                    <div class="text-center">
+                        <h2 class="page-header">Inscription</h2>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="control-label">Nom Utilisateur</label>
+                        <input type="text" class="form-control" name="NomUtilisateur" value="<?php echo set_value('NomUtilisateur'); ?>" size="30" required/> 
+                            <?php echo form_error('NomUtilisateur'); ?>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="control-label">Nom</label>
+                        <input type="text" class="form-control" name="Nom" value="<?php echo set_value('Nom'); ?>" size="30" required/>
+                        <?php echo form_error('Nom'); ?>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="control-label">Prenom</label>
+                        <input type="text" class="form-control" name="Prenom" value="<?php echo set_value('Prenom'); ?>" size="30" required/> 
+                    </div>
+                    
+                    <div class="row form-group">
+                        <div class="col-sm-12">
+                            <label class="control-label">Niveau de Plongée</label>
+                                <select class="form-control" name="NiveauPlongee">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="control-label">Mot de passe</label>
+                        <input type="password" class="form-control" name="password" value="<?php echo set_value('password'); ?>" size="50" required/>
+                        <?php echo form_error('password'); ?>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="control-label">Confirmation du Mot de passe</label>
+                        <input type="password" class="form-control" name="passconf" value="<?php echo set_value('passconf'); ?>" size="50" required/>
+                            <?php echo form_error('passconf'); ?>
+                    </div>
+                    
+                    <div class="text-center"><input class="btn btn-primary btn-success btn-block" type="submit" value="submit" /></div>
+                    
+                    <div class="text-center">
+                        <br>
+                        <h1 style="color:darkslategrey; " > Mon Carnet de Bord en Ligne </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-                </form>
+</form>
 </body>
+ <script type="text/javascript">
+
+var fieldalias="mot de passe";
+
+function verify(element1, element2)
+/
+ {
+    var passed=false;
+    if (element1.value!==element2.value) {
+    alert("Les deux "+fieldalias+" ne condordent pas");
+    element1.select();
+    return passed;
+    }
+    else {
+        passed=true;
+        return passed;
+    }
+ }
+// fin du script -->
+</script> 
+</script> 
 </html>
+          
