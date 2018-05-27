@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class flore_model extends CI_Model{
+class Flore_model extends CI_Model{
     
     protected $table ='flore';
     
@@ -29,4 +29,3 @@ class flore_model extends CI_Model{
     }
      
     
-
