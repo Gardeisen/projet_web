@@ -41,8 +41,9 @@
         <body>
            
 
-<?php echo form_open('User/inscriptionvalid'); ?>
+
 <form name="form" onSubmit="return verify(password, passconf)">
+    <?php echo form_open('User/inscriptionvalid'); ?>
 <div class="container-fluid">
     <div id="page-login" class="row">
         <div class="col-xs-12 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
@@ -94,7 +95,7 @@
                             <?php echo form_error('passconf'); ?>
                     </div>
                     
-                    <div class="text-center"><input class="btn btn-primary btn-success btn-block" type="submit" value="submit" /></div>
+                    <div class="text-center"><input class="btn btn-primary btn-success btn-block" type="submit" value="Inscription" /></div>
                     
                     <div class="text-center">
                         <br>

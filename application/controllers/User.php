@@ -17,11 +17,26 @@ class User extends CI_Controller{
            
     }
     else {
-            $this->load->view('plongee/mapageaccueil');
+        header('location :'.site_url('plongee/affichermesplongees'));
     }
         
         
     }
+    
+    public function affichermonprofil() {
+            
+        if( get_cookie('nom_utilisateur')==''){
+          
+             $this->load->view('user/connexion');
+           
+           
+    }
+    else {
+            $data['utilisateur']= $this->user_model->getinfouser(get_cookie('nom_utilisateur'));
+            $this->load->view('user/monprofil',$data);
+    }
+            
+        }
     
     public function validconnexion(){
 
@@ -42,8 +57,7 @@ class User extends CI_Controller{
         else {
             
             set_cookie('nom_utilisateur', $data['NomUtilisateur'],'3600');
-          
-            $this->load->view('plongee/mapageaccueil');
+            header('location :'.site_url('plongee/affichermesplongees'));
         }
         
     }
@@ -92,15 +106,11 @@ class User extends CI_Controller{
     
                        $this->user_model->insert($data);
                        set_cookie('nom_utilisateur', $data['NomUtilisateur'],'3600');
+                       $data['plongee']= $this->plongee_model->getall(get_cookie('nom_utilisateur'));
                        $this->load->view('plongee/mapageaccueil');
+                      
                 }
     }
  
-    public function test(){
-       
-         
-        $this->load->view('user/test');
-    }
-
 }
   

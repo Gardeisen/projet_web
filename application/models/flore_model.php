@@ -9,16 +9,15 @@ class flore_model extends CI_Model{
         
     } 
     
-    public function index() {
-        
-    $this->load->database('default');
-
-   return $this->db->select('*')
-                    ->from('flore')
-                    ->get()
-                    ->result();
-
-}
+    public function getall(){
+         
+        return  $this->db->distinct()
+                ->select('*')
+                ->from($this->table)
+                ->get()
+                ->result();
+       
+    }
     public function insert($data){
         
         $this->db->set('nom', $data['nom'])

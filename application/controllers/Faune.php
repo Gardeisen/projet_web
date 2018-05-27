@@ -35,6 +35,10 @@ class Faune extends CI_Controller{
            
     }
     else {
+            $data['site']= $this->site_model->getall();
+            $data['moniteur']= $this->moniteur_model->getall(); 
+            $data['faune']= $this->faune_model->getall();
+            $data['flore']= $this->flore_model->getall();
             $this->load->view('plongee/ajout_plongee');
     }
     }

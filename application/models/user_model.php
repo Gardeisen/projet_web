@@ -33,4 +33,14 @@ class user_model extends CI_Model{
         return $result;
     }
     
+    public function getinfouser($nomutilisateur){
+        
+        return 
+        $this->db->select('nom','prenom','niveaudeplongee')
+                ->from($this->table)
+                ->where('users.nomutilisateur',$nomutilisateur)
+                ->get()
+                ->result();
+    }
+    
 }

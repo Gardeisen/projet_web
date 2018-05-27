@@ -25,28 +25,7 @@
 	</head>
 
         <!--Start Header-->
-<div id="screensaver">
-	<canvas id="canvas"></canvas>
-	<i class="fa fa-lock" id="screen_unlock"></i>
-</div>
-<div id="modalbox">
-	<div class="devoops-modal">
-		<div class="devoops-modal-header">
-			<div class="modal-header-name">
-				<span>Basic table</span>
-			</div>
-			<div class="box-icons">
-				<a class="close-link">
-					<i class="fa fa-times"></i>
-				</a>
-			</div>
-		</div>
-		<div class="devoops-modal-inner">
-		</div>
-		<div class="devoops-modal-bottom">
-		</div>
-	</div>
-</div>
+
 <header class="navbar">
 	<div class="container-fluid expanded-panel">
 		<div class="row">
@@ -62,7 +41,7 @@
 						
 						<ul class="nav navbar-nav pull-right ">
 							<li class="dropdown">
-								<a href="#" class="dropdown-toggle account" data-toggle="dropdown">
+								<a href="<?php echo site_url("user/affichermonprofil")?>" class="dropdown-toggle account" data-toggle="dropdown">
                                                                     <h3><span>Mon Profil <?php echo get_cookie('nom_utilisateur');?></span></h3>
 									
 								</a>
@@ -89,7 +68,7 @@
 					</a>
 				</li>
                                 <li>
-					<a href="<?php echo site_url("plongee/ajouterplonger")?>" class="ajax-link">
+					<a href="<?php echo site_url("plongee/ajouterplongee")?>" class="ajax-link">
 						
 						<span class="hidden-xs">Ajouter une plongée </span>
 					</a>
@@ -117,17 +96,6 @@
 		<div id="content" class="col-xs-12 col-sm-10">
                     
                   
-                 
-			<div id="about">
-				<div class="about-inner">
-					<h4 class="page-header">Open-source admin theme for you</h4>
-					<p>DevOOPS team</p>
-					<p>Homepage - <a href="http://devoops.me" target="_blank">http://devoops.me</a></p>
-					<p>Email - <a href="mailto:devoopsme@gmail.com">devoopsme@gmail.com</a></p>
-					<p>Twitter - <a href="http://twitter.com/devoopsme" target="_blank">http://twitter.com/devoopsme</a></p>
-					<p>Donate - BTC 123Ci1ZFK5V7gyLsyVU36yPNWSB5TDqKn3</p>
-				</div>
-			</div>
                     
                     
                     
@@ -163,8 +131,17 @@
                                                         <button type="button" class="btn btn-primary btn-xs" />nouveau</button>
                                                         </a>
 							<div class="col-sm-5">
-                                                            <input type="text" class="form-control" name="nommono" required>
-                                                            <?php echo form_error('nommono'); ?>
+                                                            <select class="form-control" name="idmoniteur" >
+                                                            
+                                                                <?php
+                                                                      
+                                                                    foreach ($moniteur as $item) {
+                                                                      
+                                                                        echo "<option value = $item->idmoniteur>$item->nommono </option>";
+                                                                    }
+                                                                    ?>
+                                                                
+                                                            </select>
 							</div>
                                                         
 						</div>
@@ -174,44 +151,57 @@
                                                         <button type="button" class="btn btn-primary btn-xs" />nouveau</button>
                                                         </a>
 							<div class="col-sm-5">
-                                                            <input type="text" class="form-control" name="username" >
-							</div>
-						</div>
-                                            
-                                                <div class="form-group">
-							<label class="col-sm-3 control-label"  >La Faune vue</label>
-                                                        <a href="<?php echo site_url("faune/ajouterfaune")?>">
-                                                        <button type="button" class="btn btn-primary btn-xs" />nouvelle faune</button>
-                                                        </a>
-							<div class="col-sm-5">
-                                                            <select class="form-control" name="idfaune">
-                                                                
-                                                           <?php
-                                                           
-                                                                    foreach ($faune as $item) {
+                                                            <select class="form-control" name="idsite">
+                                                              <?php
                                                                       
-                                                                        echo "<option value = $item->idfaune>$item->nom </option>";
+                                                                    foreach ($site as $item) {
+                                                                      
+                                                                        echo "<option value = $item->idsite>$item->positiongeo </option>";
                                                                     }
                                                                     ?>
+                                                           
                                                         
                                                             </select>
 							</div>
 						</div>
+                                           
+				<div class="row form-group">
+                                    <label class="col-sm-3 control-label">La Faune vue</label>
+                                    <a href="<?php echo site_url("faune/ajouterfaune")?>">
+                                        <button type="button" class="btn btn-primary btn-xs" />nouvelle faune</button>
+                                    </a>
                                             
-                                                <div class="form-group">
-							<label class="col-sm-3 control-label">La Flore vue</label>
-                                                        <a href="<?php echo site_url("flore/ajouterflore")?>">
-                                                        <button type="button" class="btn btn-primary btn-xs" />nouvelle flore</button>
-                                                        </a>
-							<div class="col-sm-5">
-                                                            <select multiple name="flore[]">
-                                                                <option value="algue1">algue 1</option>
-                                                                <option value="algue">algue 2</option>
-                                                                <option value="coreaux1">coreaux 1</option>
-                                                                <option value="coreaux2">coreaux2</option>
-                                                            </select>
-							</div>
-						</div>
+                                            <div class="col-sm-5">
+                                                
+						<?php foreach ($faune as $item) {
+                                                    
+                                                    echo"<div class='checkbox'><label><input type='checkbox' value=$item->idfaune->$item->nom</input><i class='fa fa-square-o small'></i></label></div> ";
+                                                   
+                                                }
+                                                ?>
+                                            </div>
+                                </div>
+                                            
+                                            <div class="row form-group">
+                                    <label class="col-sm-3 control-label">La Flore vue</label>
+                                    <a href="<?php echo site_url("flore/ajouterflore")?>">
+                                        <button type="button" class="btn btn-primary btn-xs" />nouvelle flore</button>
+                                    </a>        
+                                            <div class="col-sm-5">
+                                                
+						<?php foreach ($flore as $item) {
+                                                    
+                                                    echo"<div class='checkbox'><label><input type='checkbox' value=$item->idflore->$item->nom</input><i class='fa fa-square-o small'></i></label></div> ";
+                                                   
+                                                }
+                                                ?>
+                                            </div>
+                                </div>
+                                            </div>
+                 </div>
+   </div>
+</div>
+               
 						
 					</fieldset>
 					

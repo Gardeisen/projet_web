@@ -18,6 +18,13 @@ class site_model extends CI_Model{
  	->insert($this->table);
     
 }
-    
+    public function getall(){
+         
+        return  $this->db->select('*')
+                ->from($this->table)
+                ->get()
+                ->result();
+       
+    }
     
 }

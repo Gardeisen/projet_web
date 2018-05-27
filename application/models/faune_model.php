@@ -10,7 +10,9 @@ class faune_model extends CI_Model{
     } 
     
     public function getall(){
-         $this->db->select('*')
+         
+        return  $this->db->distinct('name')
+                ->select('*')
                 ->from($this->table)
                 ->get()
                 ->result();

@@ -24,29 +24,6 @@
 		<![endif]-->
 	</head>
 
-        <!--Start Header-->
-<div id="screensaver">
-	<canvas id="canvas"></canvas>
-	<i class="fa fa-lock" id="screen_unlock"></i>
-</div>
-<div id="modalbox">
-	<div class="devoops-modal">
-		<div class="devoops-modal-header">
-			<div class="modal-header-name">
-				<span>Basic table</span>
-			</div>
-			<div class="box-icons">
-				<a class="close-link">
-					<i class="fa fa-times"></i>
-				</a>
-			</div>
-		</div>
-		<div class="devoops-modal-inner">
-		</div>
-		<div class="devoops-modal-bottom">
-		</div>
-	</div>
-</div>
 <header class="navbar">
 	<div class="container-fluid expanded-panel">
 		<div class="row">
@@ -62,7 +39,7 @@
 						
 						<ul class="nav navbar-nav pull-right ">
 							<li class="dropdown">
-								<a href="#" class="dropdown-toggle account" data-toggle="dropdown">
+								<a href="<?php echo site_url("user/affichermonprofil")?>" class="dropdown-toggle account" data-toggle="dropdown">
                                                                     <h3><span>Mon Profil <?php echo get_cookie('nom_utilisateur');?></span></h3>
 									
 								</a>
