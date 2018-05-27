@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class faune_model extends CI_Model{
+class Faune_model extends CI_Model{
     
      protected $table ='faune';
     
