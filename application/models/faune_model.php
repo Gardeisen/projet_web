@@ -11,8 +11,7 @@ class faune_model extends CI_Model{
     
     public function getall(){
          
-        return  $this->db->distinct('name')
-                ->select('*')
+        return  $this->db->select('DISTINCT nom , idfaune',FALSE)
                 ->from($this->table)
                 ->get()
                 ->result();

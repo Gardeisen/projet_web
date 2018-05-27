@@ -17,7 +17,10 @@ class User extends CI_Controller{
            
     }
     else {
-        header('location :'.site_url('plongee/affichermesplongees'));
+        
+//         header('location :'.site_url('plongee/affichermesplongees'));
+           $data['plongee']= $this->plongee_model->getall(get_cookie('nom_utilisateur'));
+           $this->load->view('plongee/mapageaccueil',$data);
     }
         
         
@@ -57,7 +60,8 @@ class User extends CI_Controller{
         else {
             
             set_cookie('nom_utilisateur', $data['NomUtilisateur'],'3600');
-            header('location :'.site_url('plongee/affichermesplongees'));
+            $data['plongee']= $this->plongee_model->getall(get_cookie('nom_utilisateur'));
+            $this->load->view('plongee/mapageaccueil',$data);
         }
         
     }
