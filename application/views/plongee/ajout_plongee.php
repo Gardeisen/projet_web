@@ -109,7 +109,7 @@
 						<div class="form-group">
 							<label class="col-sm-3 control-label">Date de la Plongée</label>
 							<div class="col-sm-5">
-								<input type="text" class="form-control" name="username" />
+								<input type="date" class="form-control" name="username" />
 							</div>
 						</div>
                                                 <div class="form-group">
@@ -175,7 +175,7 @@
                                                 
 						<?php foreach ($faune as $item) {
                                                     
-                                                    echo"<div class='checkbox'><label><input type='checkbox' value=$item->idfaune->$item->nom</input><i class='fa fa-square-o small'></i></label></div> ";
+                                                    echo"<div class='checkbox'><input type='checkbox' value=$item->idfaune->$item->nom</input></div> ";
                                                    
                                                 }
                                                 ?>
