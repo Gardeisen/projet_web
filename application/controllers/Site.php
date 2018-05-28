@@ -31,7 +31,7 @@ class Site extends CI_Controller{
                     );
                     
                     $this->site_model->insert($data);
-                    $this->load->view('plongee/ajout_plongee');
+                    redirect('Plongee/ajouterplongee');
                 
         
     }

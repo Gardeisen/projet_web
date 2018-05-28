@@ -12,13 +12,13 @@ class Moniteur extends CI_Controller{
        
         if( get_cookie('nom_utilisateur')==''){
           
-             $this->load->view('user/connexion');
+             redirect('User/index');
            
            
     }
     else {
             
-            $this->load->view('moniteur/ajout_moniteur');
+            $this->load->view('Moniteur/ajout_moniteur');
     }
 }
 
@@ -32,7 +32,7 @@ class Moniteur extends CI_Controller{
                     );
                     
                     $this->moniteur_model->insert($data);
-                    $this->load->view('plongee/ajout_plongee');
+                    redirect('Plongee/ajouterplongee');
                 
         
     }

@@ -12,7 +12,7 @@ class User extends CI_Controller{
        
         if( get_cookie('nom_utilisateur')==''){
           
-             $this->load->view('user/connexion');
+             $this->load->view('User/connexion');
            
            
     }
@@ -20,7 +20,7 @@ class User extends CI_Controller{
         
 //         header('location :'.site_url('plongee/affichermesplongees'));
            $data['plongee']= $this->plongee_model->getall(get_cookie('nom_utilisateur'));
-           $this->load->view('plongee/index',$data);
+           $this->load->view('Plongee/index',$data);
     }
         
         
@@ -30,13 +30,13 @@ class User extends CI_Controller{
             
         if( get_cookie('nom_utilisateur')==''){
           
-             $this->load->view('user/connexion');
+             redirect('User/index');
            
            
     }
     else {
             $data['utilisateur']= $this->user_model->getinfouser(get_cookie('nom_utilisateur'));
-            $this->load->view('user/monprofil',$data);
+            $this->load->view('User/monprofil',$data);
     }
             
         }
@@ -54,14 +54,13 @@ class User extends CI_Controller{
         $query = $this->user_model->verifmotdepasse($data);
        
         if (empty($query)){
-            $this->load->view('user/connexion');
+            redirect('User/index');
             
         }
         else {
             
             set_cookie('nom_utilisateur', $data['NomUtilisateur'],'3600');
-            $data['plongee']= $this->plongee_model->getall(get_cookie('nom_utilisateur'));
-            $this->load->view('plongee/index',$data);
+            redirect('Plongee/affichermesplongees');
         }
         
     }
@@ -69,13 +68,13 @@ class User extends CI_Controller{
     public function inscription(){
        
          
-        $this->load->view('user/inscription');
+        $this->load->view('User/inscription');
     }
     
     public function deconnexion(){
         
         delete_cookie('nom_utilisateur');
-        $this->load->view('user/deconnexion');
+        $this->load->view('User/deconnexion');
     }
     public function inscriptionvalid(){
            
@@ -92,7 +91,7 @@ class User extends CI_Controller{
            
            if ($this->form_validation->run() == FALSE)
                 {
-                        $this->load->view('user/inscription');
+                        redirect('User/inscription');
                 }
                 else
                 {
@@ -110,8 +109,7 @@ class User extends CI_Controller{
     
                        $this->user_model->insert($data);
                        set_cookie('nom_utilisateur', $data['NomUtilisateur'],'3600');
-                       $data['plongee']= $this->plongee_model->getall(get_cookie('nom_utilisateur'));
-                       $this->load->view('plongee/index');
+                       redirect('Plongee/affichermesplongees');
                       
                 }
     }

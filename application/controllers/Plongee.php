@@ -12,11 +12,11 @@ class Plongee extends CI_Controller{
        if( get_cookie('nom_utilisateur')!=''){
           
            $data['plongee']= $this->plongee_model->getall(get_cookie('nom_utilisateur'));
-           $this->load->view('plongee/mapageaccueil',$data);
+           $this->load->view('Plongee/mapageaccueil',$data);
            
     }
     else {
-        $this->load->view('user/connexion');
+            redirect('User/index');
     }
     }
     
@@ -29,13 +29,16 @@ class Plongee extends CI_Controller{
            $data['moniteur']= $this->moniteur_model->getall(); 
            $data['faune']= $this->faune_model->getall();
            $data['flore']= $this->flore_model->getall();
-           $this->load->view('plongee/ajout_plongee',$data);
+           $this->load->view('Plongee/ajout_plongee',$data);
            
            
     }
     else {
-             $this->load->view('user/connexion');
+             redirect('User/index');
     }
     }
     
+    public function creation(){
+        
+    }
 }

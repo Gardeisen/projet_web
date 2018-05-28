@@ -103,7 +103,7 @@
    <div class="row">
                  <div class="col-xs-12 col-sm-8">
                    <div class="box-content">
-				<form id="defaultForm" method="post" action="validators.html" class="form-horizontal">
+				<form id="defaultForm" method="post" action="Plongee/" class="form-horizontal">
 					<fieldset>
                                             <legend>Ajouter une nouvelle plongée</legend>
 						<div class="form-group">
@@ -165,7 +165,7 @@
                                                             </select>
 							</div>
 						</div>
-                                           
+                                   
 				<div class="row form-group">
                                     <label class="col-sm-3 control-label">La Faune vue</label>
                                     <a href="<?php echo site_url("faune/ajouterfaune")?>">

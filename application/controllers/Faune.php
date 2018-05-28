@@ -12,12 +12,12 @@ class Faune extends CI_Controller{
        
         if( get_cookie('nom_utilisateur')==''){
           
-             $this->load->view('user/connexion');
+             redirect('User/index');
            
            
     }
     else {
-            $this->load->view('faune/ajout_faune');
+            $this->load->view('Faune/ajout_faune');
     }
     }  
     
@@ -30,16 +30,12 @@ class Faune extends CI_Controller{
            $this->faune_model->insert($data);
          if( get_cookie('nom_utilisateur')==''){
           
-             $this->load->view('user/connexion');
+             redirect('User/index');
            
            
     }
     else {
-            $data['site']= $this->site_model->getall();
-            $data['moniteur']= $this->moniteur_model->getall(); 
-            $data['faune']= $this->faune_model->getall();
-            $data['flore']= $this->flore_model->getall();
-            $this->load->view('plongee/ajout_plongee');
+            redirect('Plongee/ajouterplongee');
     }
     }
 }

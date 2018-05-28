@@ -13,12 +13,12 @@ class Flore extends CI_Controller{
        
         if( get_cookie('nom_utilisateur')==''){
           
-             $this->load->view('user/connexion');
+             redirect('User/index');
            
            
     }
     else {
-            $this->load->view('flore/ajout_flore');
+            $this->load->view('Flore/ajout_flore');
     }
     }   
     
@@ -31,12 +31,12 @@ class Flore extends CI_Controller{
            $this->flore_model->insert($data);
          if( get_cookie('nom_utilisateur')==''){
           
-             $this->load->view('user/connexion');
+             redirect('User/index');
            
            
     }
     else {
-            $this->load->view('plongee/ajout_plongee');
+            redirect('Plongee/ajouterplongee');
     }
     }
     
