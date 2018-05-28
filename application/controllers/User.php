@@ -86,12 +86,19 @@ class User extends CI_Controller{
                'is_unique' => "nom utilisateur déjà choisit"
            )
             );
- 
+            $this->form_validation->set_rules('password', 'Mot de passe', 'required');
+            $this->form_validation->set_rules('passconf', 'Confirmation du Mot de passe', 'required|matches[password]',
+                    array(
+                      'matches' => "Les mots de passe ne correspondent pas"  
+                            )
+                        
+                    );
+            
 
            
            if ($this->form_validation->run() == FALSE)
                 {
-                        redirect('User/inscription');
+               $this->load->view('user/inscription');
                 }
                 else
                 {

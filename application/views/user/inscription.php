@@ -42,7 +42,6 @@
            
 
 
-<form name="form" onSubmit="return verify(password, passconf)">
     <?php echo form_open('User/inscriptionvalid'); ?>
 <div class="container-fluid">
     <div id="page-login" class="row">
@@ -86,13 +85,13 @@
                     <div class="form-group">
                         <label class="control-label">Mot de passe</label>
                         <input type="password" class="form-control" name="password" value="<?php echo set_value('password'); ?>" size="50" required/>
-                        <?php echo form_error('password'); ?>
+                        
                     </div>
                     
                     <div class="form-group">
                         <label class="control-label">Confirmation du Mot de passe</label>
                         <input type="password" class="form-control" name="passconf" value="<?php echo set_value('passconf'); ?>" size="50" required/>
-                            <?php echo form_error('passconf'); ?>
+                        <h6 style="color:red;"><?php echo form_error('passconf'); ?></h6>
                     </div>
                     
                     <div class="text-center"><input class="btn btn-primary btn-success btn-block" type="submit" value="- Inscription -" /></div>
@@ -110,26 +109,5 @@
 </div>
 </form>
 </body>
- <script type="text/javascript">
-
-var fieldalias="mot de passe";
-
-function verify(element1, element2)
-/
- {
-    var passed=false;
-    if (element1.value!==element2.value) {
-    alert("Les deux "+fieldalias+" ne condordent pas");
-    element1.select();
-    return passed;
-    }
-    else {
-        passed=true;
-        return passed;
-    }
- }
-// fin du script -->
-</script> 
-</script> 
 </html>
           
