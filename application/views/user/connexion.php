@@ -56,7 +56,7 @@
 					</div>
 					<div class="form-group">
 						<label class="control-label">Nom Utilisateur</label>
-                                                <input type="text" class="form-control" name="NomUtilisateur" required/>
+                                                <input type="text" class="form-control" name="NomUtilisateur" value="<?php echo set_value('NomUtilisateur')?>" required/>
 					</div>
 					<div class="form-group">
 						<label class="control-label">Mot de passe</label>
