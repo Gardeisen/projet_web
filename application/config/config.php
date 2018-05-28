@@ -35,7 +35,7 @@ $config['base_url'] = 'https://gardeisen-projet-web.herokuapp.com/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php/user/pageconnexion';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
