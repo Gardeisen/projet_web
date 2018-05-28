@@ -156,7 +156,7 @@
                                                                       
                                                                     foreach ($site as $item) {
                                                                       
-                                                                        echo "<option value = $item->idsite>$item->positiongeo </option>";
+                                                                        echo "<option value = $item->idsite>$item->nom </option>";
                                                                     }
                                                                     ?>
                                                            
