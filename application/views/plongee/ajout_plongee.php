@@ -175,7 +175,7 @@
                                                 
 						<?php foreach ($faune as $item) {
                                                     
-                                                    echo"<div class='checkbox'><input type='checkbox' value=$item->idfaune->$item->nom</input></div> ";
+                                                    echo"<input type='checkbox' name ='faune' value=$item->idfaune->$item->nom</input> ";
                                                    
                                                 }
                                                 ?>
