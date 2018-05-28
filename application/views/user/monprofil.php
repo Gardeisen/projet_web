@@ -94,7 +94,7 @@
                                 <h1><u>Mon profil</u></h1>
                                
                             </div>
-                           <?php var_dump($utilisateur); ?> 
+                          
                     <div>
                         <h4> Nom : <?php echo $utilisateur[0]->nom ?> </h4>
                     </div>

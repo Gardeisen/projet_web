@@ -95,7 +95,7 @@
                             <?php echo form_error('passconf'); ?>
                     </div>
                     
-                    <div class="text-center"><input class="btn btn-primary btn-success btn-block" type="submit" value="Inscription" /></div>
+                    <div class="text-center"><input class="btn btn-primary btn-success btn-block" type="submit" value="- Inscription -" /></div>
                     <div class="text-center">
                         <a href="<?php echo site_url("user/index")?>" class="btn btn-primary btn-warning btn-block">- Me Connecter -</a>
                     </div>
