@@ -8,7 +8,7 @@ class User extends CI_Controller{
        
     } 
     
-    public function pageconnexion (){
+    public function index(){
        
         if( get_cookie('nom_utilisateur')==''){
           
