@@ -21,4 +21,6 @@ class Plongee_model extends CI_Model{
                 ->result();
        
     }
+    
+    
 }
