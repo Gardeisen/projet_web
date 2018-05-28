@@ -111,7 +111,7 @@
                                             <div class="form-group">
 							<label class="col-sm-5 control-label">Nom </label>
 							<div class="col-sm-5">
-                                                            <input type="text" class="form-control" name="nom" value="<?php echo set_value('nom'); ?>" size="25" />
+                                                            <input type="text" class="form-control" name="nom" value="<?php echo set_value('nom'); ?>" size="25" required />
                                                            
 							</div>
 						</div>

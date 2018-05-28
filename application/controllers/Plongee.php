@@ -16,7 +16,7 @@ class Plongee extends CI_Controller{
            
     }
     else {
-             $this->load->view('user/connexion');
+        $this->load->view('user/connexion');
     }
     }
     
@@ -28,7 +28,7 @@ class Plongee extends CI_Controller{
            $data['site']= $this->site_model->getall();
            $data['moniteur']= $this->moniteur_model->getall(); 
            $data['faune']= $this->faune_model->getall();
-           $data['flore']= $this->faune_model->getall();
+           $data['flore']= $this->flore_model->getall();
            $this->load->view('plongee/ajout_plongee',$data);
            
            

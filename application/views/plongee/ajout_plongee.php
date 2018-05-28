@@ -109,20 +109,21 @@
 						<div class="form-group">
 							<label class="col-sm-3 control-label">Date de la Plongée</label>
 							<div class="col-sm-5">
-								<input type="date" class="form-control" name="username" />
+                                                            <input type="date" class="form-control" name="date" value="<?php echo set_value('date')?>" required />
+                                                            <?php echo form_error('date'); ?>
 							</div>
 						</div>
                                                 <div class="form-group">
 							<label class="col-sm-3 control-label">Profondeur</label>
 							<div class="col-sm-5">
-                                                            <input type="float" class="form-control" name="profondeur" required />
+                                                            <input type="float" class="form-control" name="profondeur" value="<?php echo set_value('profondeur')?>" required />
                                                             <?php echo form_error('profondeur'); ?>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-sm-3 control-label">Condition de Plongée</label>
 							<div class="col-sm-5">
-                                                            <textarea type="text" class="form-control" name="username" ></textarea>
+                                                            <textarea type="text" class="form-control" name="condition" ></textarea>
 							</div>
 						</div>
                                             <div class="form-group">
@@ -131,7 +132,7 @@
                                                         <button type="button" class="btn btn-primary btn-xs" />nouveau</button>
                                                         </a>
 							<div class="col-sm-5">
-                                                            <select class="form-control" name="idmoniteur" >
+                                                            <select class="form-control" name="idmoniteur" required >
                                                             
                                                                 <?php
                                                                       
@@ -151,7 +152,7 @@
                                                         <button type="button" class="btn btn-primary btn-xs" />nouveau</button>
                                                         </a>
 							<div class="col-sm-5">
-                                                            <select class="form-control" name="idsite">
+                                                            <select class="form-control" name="idsite" required>
                                                               <?php
                                                                       
                                                                     foreach ($site as $item) {
@@ -175,7 +176,7 @@
                                                 
 						<?php foreach ($faune as $item) {
                                                     
-                                                    echo"<input type='checkbox' name ='faune' value=$item->idfaune->$item->nom</input> ";
+                                                    echo"<div><label><input type='checkbox' name ='faune' value=$item->idfaune->$item->nom</input></label></div> ";
                                                    
                                                 }
                                                 ?>
@@ -191,7 +192,7 @@
                                                 
 						<?php foreach ($flore as $item) {
                                                     
-                                                    echo"<div class='checkbox'><label><input type='checkbox' value=$item->idflore->$item->nom</input><i class='fa fa-square-o small'></i></label></div> ";
+                                                    echo"<div><label><input type='checkbox' name ='flore' value=$item->idflore->$item->nom</input></label></div> ";
                                                    
                                                 }
                                                 ?>
