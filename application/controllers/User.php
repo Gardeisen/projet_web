@@ -12,7 +12,7 @@ class User extends CI_Controller{
        
         if( get_cookie('nom_utilisateur')==''){
           
-             $this->load->view('User/connexion');
+             $this->load->view('user/connexion');
            
            
     }
