@@ -130,7 +130,7 @@
 						</div>
                                             <div class="form-group">
 							<label class="col-sm-3 control-label">Nom Moniteur </label> 
-                                                        <a href="<?php echo site_url("moniteur/ajoutermoniteur")?>">
+                                                        <a href="<?php echo site_url("Moniteur/ajoutermoniteur")?>">
                                                         <button type="button" class="btn btn-primary btn-xs" />nouveau</button>
                                                         </a>
 							<div class="col-sm-5">
@@ -150,7 +150,7 @@
 						</div>
                                                 <div class="form-group">
 							<label class="col-sm-3 control-label">Nom du site</label>
-                                                        <a href="<?php echo site_url("site/ajoutersite")?>">
+                                                        <a href="<?php echo site_url("Site/ajoutersite")?>">
                                                         <button type="button" class="btn btn-primary btn-xs" />nouveau</button>
                                                         </a>
 							<div class="col-sm-5">
@@ -170,7 +170,7 @@
                                    
 				<div class="row form-group">
                                     <label class="col-sm-3 control-label">La Faune vue</label>
-                                    <a href="<?php echo site_url("faune/ajouterfaune")?>">
+                                    <a href="<?php echo site_url("Faune/ajouterfaune")?>">
                                         <button type="button" class="btn btn-primary btn-xs" />nouvelle faune</button>
                                     </a>
                                             
@@ -187,7 +187,7 @@
                                             
                                             <div class="row form-group">
                                     <label class="col-sm-3 control-label">La Flore vue</label>
-                                    <a href="<?php echo site_url("flore/ajouterflore")?>">
+                                    <a href="<?php echo site_url("Flore/ajouterflore")?>">
                                         <button type="button" class="btn btn-primary btn-xs" />nouvelle flore</button>
                                     </a>        
                                             <div class="col-sm-5">
