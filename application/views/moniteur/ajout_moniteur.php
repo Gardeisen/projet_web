@@ -40,7 +40,7 @@
 						<ul class="nav navbar-nav pull-right ">
 							<li class="dropdown">
 								<a href="<?php echo site_url("user/affichermonprofil")?>" class="dropdown-toggle account" data-toggle="dropdown">
-                                                                    <h3><span>Mon Profil <?php echo get_cookie('nom_utilisateur');?></span></h3>
+                                                                    <h3><span>Mon Profil <?php echo $this->encryption->decrypt(get_cookie('nom_utilisateur'));?></span></h3>
 									
 								</a>
 								
@@ -89,8 +89,8 @@
 			</ul>
 		</div>
         
-            <?php echo form_open('Moniteur/insert'); ?>
-    
+            
+    <?php echo form_open('Moniteur/insert'); ?>
    
 		<!--Start Content-->
                 <div class="container-fluid" >

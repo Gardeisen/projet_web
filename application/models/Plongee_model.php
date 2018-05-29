@@ -23,4 +23,22 @@ class Plongee_model extends CI_Model{
     }
     
     
+    
+    public function insert($data){
+        
+        $idUser= $this->db->select('iduser')
+                ->from('users')
+                ->where('users.nomutilisateur', get_cookie('nom_utilisateur'))
+                ->get()
+                ->result();
+        
+        $this->db->set('dateplongee', $data['dateplongee'])
+ 	->set('conditionplongee', $data['conditionplongee'])
+ 	->set('profondeur', $data['profondeur'])
+        ->set('idsite', $data['idsite'])
+        ->set('idmoniteur', $data['idmoniteur'])
+        ->set('iduser',$idUser[0])
+ 	->insert($this->table);
+    }
+    
 }

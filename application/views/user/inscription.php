@@ -55,7 +55,7 @@
                     <div class="form-group">
                         <label class="control-label">Nom Utilisateur</label>
                         <input type="text" class="form-control" name="NomUtilisateur" value="<?php echo set_value('NomUtilisateur'); ?>" size="30" required/> 
-                            <?php echo form_error('NomUtilisateur'); ?>
+                            <h6 style="color:red;"><?php echo form_error('NomUtilisateur'); ?></h6>
                     </div>
                     
                     <div class="form-group">

@@ -11,8 +11,9 @@ class Plongee extends CI_Controller{
         
        if( get_cookie('nom_utilisateur')!=''){
           
-           $data['plongee']= $this->plongee_model->getall(get_cookie('nom_utilisateur'));
-           $this->load->view('Plongee/mapageaccueil',$data);
+           $cookie_decry=$this->encryption->decrypt(get_cookie('nom_utilisateur'));
+           $data['plongee']= $this->plongee_model->getall($cookie_decry);
+           $this->load->view('plongee/mapageaccueil',$data);
            
     }
     else {
@@ -29,7 +30,7 @@ class Plongee extends CI_Controller{
            $data['moniteur']= $this->moniteur_model->getall(); 
            $data['faune']= $this->faune_model->getall();
            $data['flore']= $this->flore_model->getall();
-           $this->load->view('Plongee/ajout_plongee',$data);
+           $this->load->view('plongee/ajout_plongee',$data);
            
            
     }
@@ -38,7 +39,17 @@ class Plongee extends CI_Controller{
     }
     }
     
-    public function creation(){
+    public function creationplongee(){
         
+         
+           $newP=array(
+                        "dateplongee"=> htmlspecialchars($_POST['date']),
+                        "profondeur"=> htmlspecialchars($_POST['profondeur']),
+                        "conditionplongee" => htmlspecialchars($_POST['condition']),
+                        "idmoniteur" => htmlspecialchars($_POST['idmoniteur']),
+                        "idsite" => htmlspecialchars($_POST['idsite'])
+                    );
+           $this->plongee_model->insert($newP);
+           redirect('Plongee/affichermesplongees');
     }
 }

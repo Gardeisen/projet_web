@@ -42,7 +42,7 @@
 						<ul class="nav navbar-nav pull-right ">
 							<li class="dropdown">
 								<a href="<?php echo site_url("user/affichermonprofil")?>" class="dropdown-toggle account" data-toggle="dropdown">
-                                                                    <h3><span>Mon Profil <?php echo get_cookie('nom_utilisateur');?></span></h3>
+                                                                    <h3><span>Mon Profil <?php echo $this->encryption->decrypt(get_cookie('nom_utilisateur'));?></span></h3>
 									
 								</a>
 								
@@ -93,6 +93,7 @@
             
    
 		<!--Start Content-->
+                
 		<div id="content" class="col-xs-12 col-sm-10">
                     
                   
@@ -103,7 +104,8 @@
    <div class="row">
                  <div class="col-xs-12 col-sm-8">
                    <div class="box-content">
-				<form id="defaultForm" method="post" action="Plongee/" class="form-horizontal">
+				<!-- <form id="defaultForm" method="post" action="creationplongee" class="form-horizontal"> -->
+                                <?php echo form_open('Plongee/creationplongee'); ?>
 					<fieldset>
                                             <legend>Ajouter une nouvelle plongée</legend>
 						<div class="form-group">
@@ -205,13 +207,14 @@
                
 						
 					</fieldset>
+                                
 					
 					<div class="form-group">
-						<div class="col-sm-9 col-sm-offset-3">
-							<button type="submit" class="btn btn-primary btn-success">Submit</button>
+						<div class="text-center col-sm-offset-3">
+							<button type="submit" class="btn btn-primary btn-success">- Submit -</button>
 						</div>
 					</div>
-				</form>
+				<?php echo form_close(); ?>
 			</div>
 		
 	</div>

@@ -19,8 +19,9 @@ class User extends CI_Controller{
     else {
         
 //         header('location :'.site_url('plongee/affichermesplongees'));
-           $data['plongee']= $this->plongee_model->getall(get_cookie('nom_utilisateur'));
-           $this->load->view('Plongee/index',$data);
+           $cookie_decry=$this->encryption->decrypt(get_cookie('nom_utilisateur'));
+           $data['plongee']= $this->plongee_model->getall($cookie_decry);
+           $this->load->view('plongee/index',$data);
     }
         
         
@@ -35,8 +36,9 @@ class User extends CI_Controller{
            
     }
     else {
-            $data['utilisateur']= $this->user_model->getinfouser(get_cookie('nom_utilisateur'));
-            $this->load->view('User/monprofil',$data);
+            $cookie_decry=$this->encryption->decrypt(get_cookie('nom_utilisateur'));
+            $data['utilisateur']= $this->user_model->getinfouser($cookie_decry);
+            $this->load->view('user/monprofil',$data);
     }
             
         }
@@ -58,9 +60,9 @@ class User extends CI_Controller{
             
         }
         else {
-            
-            set_cookie('nom_utilisateur', $data['NomUtilisateur'],'3600');
-            redirect('Plongee/affichermesplongees');
+            $cookie_cry = $this->encryption->encrypt($data['NomUtilisateur']);
+            set_cookie('nom_utilisateur', $cookie_cry,'3600');
+            $this->load->view('plongee/index');
         }
         
     }
@@ -68,13 +70,13 @@ class User extends CI_Controller{
     public function inscription(){
        
          
-        $this->load->view('User/inscription');
+        $this->load->view('user/inscription');
     }
     
     public function deconnexion(){
         
         delete_cookie('nom_utilisateur');
-        $this->load->view('User/deconnexion');
+        $this->load->view('user/deconnexion');
     }
     public function inscriptionvalid(){
            
@@ -115,8 +117,9 @@ class User extends CI_Controller{
                         );
     
                        $this->user_model->insert($data);
-                       set_cookie('nom_utilisateur', $data['NomUtilisateur'],'3600');
-                       redirect('Plongee/affichermesplongees');
+                       $cookie_cry = $this->encryption->encrypt($data['NomUtilisateur']);
+                       set_cookie('nom_utilisateur', $cookie_cry,'3600');  
+                       $this->load->view('user/index');
                       
                 }
     }
