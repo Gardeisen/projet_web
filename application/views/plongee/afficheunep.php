@@ -102,7 +102,7 @@
                                                 
 					</p>
                             </div>
-                            <br>
+                            
                             <div class="card">
                                 <h3 class="page-header">Mon Moniteur</h3>
 					<p>
@@ -112,6 +112,7 @@
                                                 
 					</p>
                             </div>
+                            
                             <div class="card">
                                 <h3 class="page-header">Le Spot Exploré</h3>
 					<p>
@@ -121,21 +122,36 @@
                                                 
 					</p>
                             </div>
+                            
                             <div class="card">
                                 <h3 class="page-header">La Faune observée </h3>
 					<p>
-						
+						<?php foreach ($plongee as $item) {
+                                                    
+                                                    echo "<h4>$item->nomfaune</h4>";
+                                                   
+                                                }
+                                                ?>
                                                 
 					</p>
                             </div>
+                            
                             <div class="card">
                                 <h3 class="page-header">La Flore observée </h3>
 					<p>
-						
+						<?php foreach ($plongee as $item) {
+                                                    
+                                                    echo "<h4>$item->nomflore</h4>";
+                                                   
+                                                }
+                                                ?>
                                                 
 					</p>
                             </div>
                         
+                            <div class="col-sm-9 col-sm-offset-3">
+				<button class="btn btn-primary btn-danger btn-lg">- Supprimer Cette Plongée-</button>
+                            </div>
                         
                         
                         
