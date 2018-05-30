@@ -18,7 +18,7 @@ class Moniteur extends CI_Controller{
     }
     else {
             
-            $this->load->view('Moniteur/ajout_moniteur');
+            $this->load->view('moniteur/ajout_moniteur');
     }
 }
 
