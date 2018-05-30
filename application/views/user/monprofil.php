@@ -92,37 +92,53 @@
 			
                             <div class="text-center">
                                 <h1><u>Mon profil</u></h1>
+                                <br>
+                                <br>
                                
                             </div>
                          
-                    <div>
-                        <h4> Nom : <?php echo $utilisateur[0]->nom ?> </h4>
-                    </div>
+                    <div class="col-xs-6 col-sm-4">
+		<div class="box">
+			<div class="box-header">
+				<div class="box-name">
+					<i class="fa fa-user"></i>
+					<span>Informations Personelles</span>
+				</div>
+				
+				<div class="no-move"></div>
+			</div>
+			<div class="box-content">
+				<div class="card">
+					
+					<h3 class="page-header">Plongeur</h3>
+					
+                                        <h4>- Nom = <?php echo $utilisateur[0]->nom ?></h4>
+					
+                                        <h4>- Prénom = <?php echo $utilisateur[0]->prenom ?></h4>
+					
+                                        <h4>- Niveau de Plongée = <?php echo $utilisateur[0]->niveaudeplongee ?></h4>
+					
+                                       
+                                        <h4>- Nombre de Plongée = </h4>
+					
+                                        <h4>-  Mot de Passe :
+                                        <button class="btn btn-primary btn-danger btn-xs">Changer</button>
+                                        </h4>
+				</div>
+				
+			</div>
+		</div>
+                </div>
                     
-                    <br>
-                    <div>
-                        <h4> Prénom : <?php echo $utilisateur[0]->prenom ?></h4>
-                    </div>  
-                    <br>       
-                    <div>
-                        <h4>  Niveau de Plongée :<?php echo $utilisateur[0]->niveaudeplongee ?></h4>
-                    </div>      
-                    <br>  
-                    <div>
-                        <h4> Mot de Passe :
-                        <button class="btn btn-primary btn-danger btn-xs">Changer</button>
-                        </h4>
-                    </div>
-                    
-                    
-                    <div class="form-group">
+                   
 			<div class="col-sm-9 col-sm-offset-3">
 				<button class="btn btn-primary btn-warning btn-lg">- Modifier le Profil-</button>
                         </div>
-                    </div>
-                </div>
+                   
+                   
         </div>
 </div>
+
 </div>
 <!--End Container-->
 
