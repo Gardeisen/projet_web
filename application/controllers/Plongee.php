@@ -22,12 +22,14 @@ class Plongee extends CI_Controller{
     }
     }
     
-    public function uneplongee(){
+    public function ficheplongee($idplongee){
         
         if (get_cookie('nom_utilisateur')!=''){
-            $data['user']=$this->encryption->decrypt(get_cookie('nom_utilisateur'));
-            $data['plongee']= $this->plongee_model->getinfoplongee($plongee);
+            $cookie_decry=$this->encryption->decrypt(get_cookie('nom_utilisateur'));
+            $user=$this->user_model->getuserbyid($cookie_decry);    
+            $data['plongee']= $this->plongee_model->getinfoplongee($user[0]->iduser,$idplongee);
             $this-> load->view('plongee/afficheunep',$data);
+             
         }
         else{
             redirect('User/index');

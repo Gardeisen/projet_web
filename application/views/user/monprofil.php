@@ -98,19 +98,20 @@
                             </div>
                          
                     <div class="col-xs-6 col-sm-4">
-		<div class="box">
-			<div class="box-header">
+                        <div class="box">
+                            <div class="box-header">
 				<div class="box-name">
 					<i class="fa fa-user"></i>
 					<span>Informations Personelles</span>
 				</div>
-				
-				<div class="no-move"></div>
-			</div>
+                                
+                                <div class="no-move"></div>
+                                    
+                            </div>
 			<div class="box-content">
 				<div class="card">
 					
-					<h3 class="page-header">Plongeur</h3>
+					<h3 class="page-header">Plongeur <?php echo $this->encryption->decrypt(get_cookie('nom_utilisateur'));?></h3>
 					
                                         <h4>- Nom = <?php echo $utilisateur[0]->nom ?></h4>
 					
@@ -126,8 +127,8 @@
                                         </h4>
 				</div>
 				
-			</div>
-		</div>
+                        </div>
+                        </div>
                 </div>
                     
                    

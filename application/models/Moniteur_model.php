@@ -13,7 +13,7 @@ class Moniteur_model extends CI_Model{
         
  	$this->db->set('nommono', $data['nom'])
  	->set('prenommono', $data['prenom'])
- 	->set('niveauplongee', $data['niveauPlongee'])
+ 	->set('niveauplongeem', $data['niveauPlongee'])
  	->insert($this->table);
     
 }

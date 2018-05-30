@@ -12,8 +12,8 @@ class Site_model extends CI_Model{
     
     public function insert($data) {
         
- 	$this->db->set('nom', $data['nom'])
- 	->set('description', $data['description'])
+ 	$this->db->set('nomsite', $data['nom'])
+ 	->set('descriptionsite', $data['description'])
  	->set('positiongeo', $data['positiongeo'])
  	->insert($this->table);
     

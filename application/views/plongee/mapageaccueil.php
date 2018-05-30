@@ -102,18 +102,18 @@
 						<tr>
 							
 							<th>Date</th>
-							<th>Situation Géographique</th>
+							<th>Spot</th>
 							<th>Moniteur</th>
 						</tr>
 					</thead>
 					<tbody>
 						<?php
                 foreach ($plongee as $item) {
-    
+                $lien = site_url("plongee/ficheplongee/$item->idplongee");
                         echo <<<EOT
                         <tr>
-                        <td>$item->dateplongee</td>
-                        <td>$item->positiongeo</td>
+                        <td><a href=$lien>$item->dateplongee</td></a>
+                        <td>$item->nomsite</td>
                         <td>$item->nommono</td>
                          </tr>
 EOT;

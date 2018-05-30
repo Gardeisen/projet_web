@@ -48,4 +48,20 @@ class Plongee_model extends CI_Model{
         
         
     }
+    
+    public function getinfoplongee($iduser,$idplongee){
+        return 
+        $this->db->select('*')
+                ->from($this->table)
+                ->join('site', 'site.idsite = plongee.idsite')
+                ->join('moniteur', 'moniteur.idmoniteur = plongee.idmoniteur')
+                ->join('vuflore','vuflore.idplongee=plongee.idplongee')
+                ->join('vufaune','vufaune.idplongee=plongee.idplongee')
+                ->join('flore','flore.idflore=vuflore.idflore')
+                ->join('faune','faune.idfaune=vufaune.idfaune')
+                ->where('iduser',$iduser)
+                ->where('plongee.idplongee',$idplongee)
+                ->get()
+                ->result();
+    }
 }

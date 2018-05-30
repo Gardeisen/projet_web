@@ -11,8 +11,7 @@ class Flore_model extends CI_Model{
     
     public function getall(){
          
-        return  $this->db->distinct()
-                ->select('*')
+        return  $this->db->select('DISTINCT nomflore , idflore',FALSE)
                 ->from($this->table)
                 ->get()
                 ->result();
@@ -20,8 +19,8 @@ class Flore_model extends CI_Model{
     }
     public function insert($data){
         
-        $this->db->set('nom', $data['nom'])
-        ->set('description', $data['description'])
+        $this->db->set('nomflore', $data['nom'])
+        ->set('descriptionflore', $data['description'])
  	->insert($this->table);
         
     }

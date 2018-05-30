@@ -159,7 +159,7 @@
                                                                       
                                                                     foreach ($site as $item) {
                                                                       
-                                                                        echo "<option value = $item->idsite>$item->nom </option>";
+                                                                        echo "<option value = $item->idsite>$item->nomsite </option>";
                                                                     }
                                                                     ?>
                                                            
@@ -178,7 +178,7 @@
                                                 
 						<?php foreach ($faune as $item) {
                                                     
-                                                    echo"<div><label><input type='checkbox' name ='faune[]' value=$item->idfaune>$item->nom</input></label></div> ";
+                                                    echo"<div><label><input type='checkbox' name ='faune[]' value=$item->idfaune>$item->nomfaune</input></label></div> ";
                                                    
                                                 }
                                                 ?>
@@ -194,7 +194,7 @@
                                                 
 						<?php foreach ($flore as $item) {
                                                     
-                                                    echo"<div><label><input type='checkbox' name ='flore[]' value=$item->idflore>$item->nom</input></label></div> ";
+                                                    echo"<div><label><input type='checkbox' name ='flore[]' value=$item->idflore>$item->nomflore</input></label></div> ";
                                                    
                                                 }
                                                 ?>

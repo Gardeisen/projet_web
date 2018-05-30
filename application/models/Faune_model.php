@@ -10,7 +10,7 @@ class Faune_model extends CI_Model{
     
     public function getall(){
          
-        return  $this->db->select('DISTINCT nom , idfaune',FALSE)
+        return  $this->db->select('DISTINCT nomfaune , idfaune',FALSE)
                 ->from($this->table)
                 ->get()
                 ->result();
@@ -19,8 +19,8 @@ class Faune_model extends CI_Model{
     
     public function insert($data){
         
-        $this->db->set('nom', $data['nom'])
-        ->set('description', $data['description'])
+        $this->db->set('nomfaune', $data['nom'])
+        ->set('descriptionfaune', $data['description'])
  	->insert($this->table);
         
     }
