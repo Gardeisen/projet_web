@@ -104,8 +104,8 @@
    <div class="row">
                  <div class="col-xs-12 col-sm-8">
                    <div class="box-content">
-				<!-- <form id="defaultForm" method="post" action="creationplongee" class="form-horizontal"> -->
-                                <?php echo form_open('Plongee/creationplongee'); ?>
+				<form id="defaultForm" method="post" action="creationplongee" class="form-horizontal"> 
+                                
 					<fieldset>
                                             <legend>Ajouter une nouvelle plongée</legend>
 						<div class="form-group">
@@ -178,7 +178,7 @@
                                                 
 						<?php foreach ($faune as $item) {
                                                     
-                                                    echo"<div><label><input type='checkbox' name ='faune' value=$item->idfaune->$item->nom</input></label></div> ";
+                                                    echo"<div><label><input type='checkbox' name ='faune[]' value=$item->idfaune>$item->nom</input></label></div> ";
                                                    
                                                 }
                                                 ?>
@@ -194,7 +194,7 @@
                                                 
 						<?php foreach ($flore as $item) {
                                                     
-                                                    echo"<div><label><input type='checkbox' name ='flore' value=$item->idflore->$item->nom</input></label></div> ";
+                                                    echo"<div><label><input type='checkbox' name ='flore[]' value=$item->idflore>$item->nom</input></label></div> ";
                                                    
                                                 }
                                                 ?>
@@ -214,7 +214,7 @@
 							<button type="submit" class="btn btn-primary btn-success">- Submit -</button>
 						</div>
 					</div>
-				<?php echo form_close(); ?>
+                                </form>
 			</div>
 		
 	</div>

@@ -119,7 +119,7 @@ class User extends CI_Controller{
                        $this->user_model->insert($data);
                        $cookie_cry = $this->encryption->encrypt($data['NomUtilisateur']);
                        set_cookie('nom_utilisateur', $cookie_cry,'3600');  
-                       $this->load->view('user/index');
+                       $this->load->view('plongee/index');
                       
                 }
     }

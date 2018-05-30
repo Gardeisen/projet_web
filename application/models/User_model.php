@@ -43,4 +43,14 @@ class User_model extends CI_Model{
                 ->result();
     }
     
+    public function getuserbyid($username){
+        
+        return 
+        $this->db->select('iduser')
+                ->from($this->table)
+                ->where('users.nomutilisateur',$username)
+                ->get()
+                ->result();
+    }
+    
 }

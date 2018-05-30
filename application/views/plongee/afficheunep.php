@@ -71,43 +71,10 @@
 			</ul>
 		</div>
 		<!--Start Content-->
-		<div id="content" class="col-xs-12 col-sm-10">
-			
-			
-                            <div class="text-center">
-                                <h1><u>Bienvenue !</u></h1>
-                                <br>  
-                            </div>
-                    <div class="centered" style="text-align: center">        
-                    <p>
-                        <br>
-                    <h4>
-                        Voici votre carnet de bord en ligne, vous avez tendance à oublier votre carnet ou à le perdre ?
-                        Plus de soucis utiliser votre carnet de bord en ligne garder un historique de vos plongées !
-                        Et garder pleins de souvenir. 
-                        
-                    </h4>
-                    <br>
-                    </p>
-                                
-                                <div class="form-group">
-                                    <a href="<?php echo site_url("Plongee/affichermesplongees")?>">
-                                        <button type="button" class="btn btn-primary btn-xs btn-primary btn-block" />- Voir mes plongées -</button>
-                                    </a>
-                                    <br>
-                                    <a href="<?php echo site_url("User/affichermonprofil")?>">
-                                        <button type="button" class="btn btn-primary btn-xs btn-info btn-block" />- Voir mon profil -</button>
-                                    </a>
-                                    <br>
-                                    <a href="<?php echo site_url("Plongee/ajouterplongee")?>">
-                                        <button type="button" class="btn btn-primary btn-xs btn-success btn-block" />- Ajouter une plongée -</button>
-                                    </a>
-                                    <br>
-							
-                                </div>
-                    <h1 style="color:darkslategrey;"> Mon Carnet de Bord en Ligne </h1>
-                    </div>
-                </div>
+		
+                
+                
+                
         </div>
 </div>
 
