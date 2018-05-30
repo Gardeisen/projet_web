@@ -96,45 +96,32 @@
                                 <br>
                                
                             </div>
-                         
-                    <div class="col-xs-6 col-sm-4">
-                        <div class="box">
+                    <div class="col-xs-12 col-sm-3">
+                        <div class="box box-pricing">
                             <div class="box-header">
 				<div class="box-name">
-					<i class="fa fa-user"></i>
-					<span>Informations Personelles</span>
+                                    <h3><span>Plongeur<br/><?php echo $this->encryption->decrypt(get_cookie('nom_utilisateur'));?></span></h3>
 				</div>
-                                
-                                <div class="no-move"></div>
-                                    
-                            </div>
-			<div class="box-content">
-				<div class="card">
-					
-					<h3 class="page-header">Plongeur <?php echo $this->encryption->decrypt(get_cookie('nom_utilisateur'));?></h3>
-					
-                                        <h4>- Nom = <?php echo $utilisateur[0]->nom ?></h4>
-					
-                                        <h4>- Prénom = <?php echo $utilisateur[0]->prenom ?></h4>
-					
-                                        <h4>- Niveau de Plongée = <?php echo $utilisateur[0]->niveaudeplongee ?></h4>
-					
-                                       
-                                        <h4>- Nombre de Plongée = </h4>
-					
-                                        <h4>-  Mot de Passe :
-                                        <button class="btn btn-primary btn-danger btn-xs">Changer</button>
-                                        </h4>
+				<div class="no-move"></div>
+			</div>
+			<div class="box-content no-padding">
+				<div class="row-fluid centered">
+					<div class="col-sm-12"><h4> Nom : <?php echo $utilisateur[0]->nom ?></h4></div>
+					<div class="col-sm-12"><h4> Prénom : <?php echo $utilisateur[0]->prenom ?></h4></div>
+					<div class="col-sm-12"><h4> Niveau de Plongée : <?php echo $utilisateur[0]->niveaudeplongee ?></h4></div>
+                                        <div class="col-sm-12"><h4> Nombre de Plongées : nb à remplir trigger</h4></div>
+					<div class="clearfix"></div>
 				</div>
-				
-                        </div>
-                        </div>
-                </div>
-                    
-                   
-			<div class="col-sm-9 col-sm-offset-3">
-				<button class="btn btn-primary btn-warning btn-lg">- Modifier le Profil-</button>
-                        </div>
+				<div class="row-fluid bg-default">
+					
+					<div class="col-sm-9 col-sm-offset-3">
+                                            <button class="btn btn-primary btn-warning btn-lg">- Modifier le Profil-</button>
+                                        </div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+	</div>
                    
                    
         </div>

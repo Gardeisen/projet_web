@@ -127,12 +127,12 @@
                                 <h3 class="page-header">La Faune observée </h3>
 					<p>
 						<?php foreach ($plongee as $item) {
-                                                    
-                                                    echo "<h4>$item->nomfaune</h4>";
+                                                $lien = "https://www.google.com/search?q=google+image+poisson+$item->nomfaune";   
+                                                    echo "<h4><a href=$lien target=_blank>$item->nomfaune</a></h4>";
                                                    
                                                 }
                                                 ?>
-                                                
+                                             
 					</p>
                             </div>
                             
@@ -140,12 +140,12 @@
                                 <h3 class="page-header">La Flore observée </h3>
 					<p>
 						<?php foreach ($plongee as $item) {
-                                                    
-                                                    echo "<h4>$item->nomflore</h4>";
+                                                $lien = "https://www.google.com/search?q=google+image+$item->nomflore+flore+sous+marine";   
+                                                    echo "<h4><a href=$lien target=_blank>$item->nomflore</a></h4>";
                                                    
                                                 }
                                                 ?>
-                                                
+                                             
 					</p>
                             </div>
                         
