@@ -145,7 +145,7 @@
 							<button type="submit" class="btn btn-primary btn-success">- Submit -</button>
 						</div>
                                                 <div class="text-center col-sm-offset-3">
-                                                         <a href="#" class="btn btn-primary btn-danger ">- Retour -</a>
+                                                         <a href="<?php echo site_url("Plongee/ajouterplongee")?>" class="btn btn-primary btn-danger ">- Retour -</a>
                                                 </div>
 					</div>
 			

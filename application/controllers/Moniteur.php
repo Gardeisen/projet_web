@@ -44,8 +44,9 @@ class Moniteur extends CI_Controller{
                     );
                     
                     $this->moniteur_model->insert($data);
+                    redirect('Plongee/ajouterplongee');
             }
-                 else {   redirect('Plongee/ajouterplongee'); }
+                 else {   redirect('Moniteur/ajoutermoniteur'); }
                 
         
     }

@@ -119,7 +119,7 @@
 						<div class="form-group">
 							<label class="col-sm-5 control-label">Description</label>
 							<div class="col-sm-5">
-                                                            <textarea type="text" class="form-control" name="description" value="<?php echo set_value('description'); ?>" required ></textarea>
+                                                            <textarea type="text" class="form-control" name="description" value="<?php echo set_value('description'); ?>" ></textarea>
                                                             <h6 style="color:red;"><?php echo form_error('description'); ?></h6>
 							</div>
 						</div>
@@ -131,7 +131,7 @@
 							<button type="submit" class="btn btn-primary btn-success">- Submit -</button>
 						</div>
                                                 <div class="text-center col-sm-offset-3">
-                                                         <a href="#" class="btn btn-primary btn-danger ">- Retour -</a>
+                                                         <a href="<?php echo site_url("Plongee/ajouterplongee")?>" class="btn btn-primary btn-danger ">- Retour -</a>
                                                 </div>
 					</div>
 			

@@ -154,8 +154,11 @@
                                 <a href="<?php echo $lien?>" 
                                 <button type="submit" class="btn btn-primary btn-danger btn-lg">- Supprimer Cette Plongée-</button>
                                 </a>
+                                <a href="<?php echo site_url("Plongee/affichermesplongees")?>" 
+                                <button class="btn btn-primary btn-primary btn-lg">- Retour-</button>
+                                </a>
                             </div>
-                            <?php var_dump($plongee[0]->idplongee);?>
+                            
                         
                         
                         </div>

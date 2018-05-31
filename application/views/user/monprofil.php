@@ -116,9 +116,13 @@
 					
 					<div class="col-sm-9 col-sm-offset-3">
                                             <a href="<?php echo site_url("User/modifiermonprofil")?>">
-                                            <button class="btn btn-primary btn-warning btn-lg">- Modifier le Profil-</button>
+                                            <button class="btn btn-primary btn-warning btn-lg">- Modifier  le  Profil -</button>
+                                            </a>
+                                            <a href="<?php echo site_url("Plongee/affichermesplongees")?>">
+                                            <button class="btn btn-primary btn-primary btn-lg">-Voir mes plongées-</button>
                                             </a>
                                         </div>
+                                    
 					<div class="clearfix"></div>
 				</div>
 			</div>

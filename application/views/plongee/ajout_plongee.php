@@ -132,7 +132,7 @@
                                             <div class="form-group">
 							<label class="col-sm-3 control-label">Nom Moniteur </label> 
                                                         <a href="<?php echo site_url("Moniteur/ajoutermoniteur")?>">
-                                                        <button type="button" class="btn btn-primary btn-xs" />nouveau</button>
+                                                        <button type="button" class="btn btn-warning btn-xs" />nouveau</button>
                                                         </a>
 							<div class="col-sm-5">
                                                             <select class="form-control" name="idmoniteur" required >
@@ -152,7 +152,7 @@
                                                 <div class="form-group">
 							<label class="col-sm-3 control-label">Nom du site</label>
                                                         <a href="<?php echo site_url("Site/ajoutersite")?>">
-                                                        <button type="button" class="btn btn-primary btn-xs" />nouveau</button>
+                                                        <button type="button" class="btn btn-warning btn-xs" />nouveau</button>
                                                         </a>
 							<div class="col-sm-5">
                                                             <select class="form-control" name="idsite" required>
@@ -172,14 +172,14 @@
 				<div class="row form-group">
                                     <label class="col-sm-3 control-label">La Faune vue</label>
                                     <a href="<?php echo site_url("Faune/ajouterfaune")?>">
-                                        <button type="button" class="btn btn-primary btn-xs" />nouvelle faune</button>
+                                        <button type="button" class="btn btn-warning btn-xs" />nouvelle faune</button>
                                     </a>
                                             
                                             <div class="col-sm-5">
                                                 
 						<?php foreach ($faune as $item) {
                                                     
-                                                    echo"<div><label><input type='checkbox' required name ='faune[]' value=$item->idfaune>$item->nomfaune</input></label></div> ";
+                                                    echo"<div><label><input type='checkbox'  name ='faune[]' value=$item->idfaune>$item->nomfaune</input></label></div> ";
                                                    
                                                 }
                                                 ?>
@@ -189,7 +189,7 @@
                                             <div class="row form-group">
                                     <label class="col-sm-3 control-label">La Flore vue</label>
                                     <a href="<?php echo site_url("Flore/ajouterflore")?>">
-                                        <button type="button" class="btn btn-primary btn-xs" />nouvelle flore</button>
+                                        <button type="button" class="btn btn-warning btn-xs" />nouvelle flore</button>
                                     </a>        
                                             <div class="col-sm-5">
                                                 
@@ -213,7 +213,11 @@
 					<div class="form-group">
 						<div class="text-center col-sm-offset-3">
 							<button type="submit" class="btn btn-primary btn-success">- Submit -</button>
+                                                        <a href="<?php echo site_url("Plongee/affichermesplongees")?>">
+                                                            <button class="btn btn-primary btn-primary ">-Voir mes plongées-</button>
+                                                        </a>
 						</div>
+                                            
 					</div>
                                 </form>
 			</div>
