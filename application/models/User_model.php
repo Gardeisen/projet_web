@@ -21,6 +21,18 @@ class User_model extends CI_Model{
  	->insert($this->table);
 
 }
+    public function update($id, $data) {
+        
+
+        $this->db->set('nom', $data['nom'])
+                ->set('prenom', $data['prenom'])
+                ->set('niveaudeplongee', $data['NiveauPlongee'])
+                ->where('nomutilisateur',$id)
+                ->update($this->table);
+
+
+
+    }
 
     public function verifmotdepasse($data) {
         

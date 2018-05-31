@@ -96,6 +96,7 @@
                                 <br>
                                
                             </div>
+                    <form method="post" action="valid_modifierprofil">
                     <div class="col-xs-12 col-sm-3">
                         <div class="box box-pricing">
                             <div class="box-header">
@@ -106,17 +107,26 @@
 			</div>
 			<div class="box-content no-padding">
 				<div class="row-fluid centered">
-					<div class="col-sm-12"><h4> Nom : <?php echo $utilisateur[0]->nom ?></h4></div>
-					<div class="col-sm-12"><h4> Prénom : <?php echo $utilisateur[0]->prenom ?></h4></div>
-					<div class="col-sm-12"><h4> Niveau de Plongée : <?php echo $utilisateur[0]->niveaudeplongee ?></h4></div>
+                                    <div class="col-sm-12"><h4> Nom : <input type="text" class="form-control" name="nom" value="<?php echo $utilisateur[0]->nom ?>"/></h4></div>
+					<div class="col-sm-12"><h4> Prénom : <input type="text" class="form-control" name="prenom" value="<?php echo $utilisateur[0]->prenom ?>" /></h4></div>
+					<div class="col-sm-12"><h4> Niveau de Plongée : <select class="form-control" name="NiveauPlongee" value="<?php echo $utilisateur[0]->niveauplongee ?>">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select></h4></div>
                                         <div class="col-sm-12"><h4> Nombre de Plongées : <?php echo $utilisateur[0]->nbplongee ?></h4></div>
 					<div class="clearfix"></div>
 				</div>
 				<div class="row-fluid bg-default">
 					
 					<div class="col-sm-9 col-sm-offset-3">
+                                            <button type="submit" class="btn btn-primary btn-success btn-lg">-Modifier-</button>
+                                        </div>
+                                        <div class="col-sm-9 col-sm-offset-3">
                                             <a href="<?php echo site_url("User/modifiermonprofil")?>">
-                                            <button class="btn btn-primary btn-warning btn-lg">- Modifier le Profil-</button>
+                                            <button type="submit" class="btn btn-primary btn-danger btn-lg">- Retour -</button>
                                             </a>
                                         </div>
 					<div class="clearfix"></div>
@@ -124,6 +134,7 @@
 			</div>
 		</div>
 	</div>
+                    </form>
                    
                    
         </div>

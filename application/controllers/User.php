@@ -42,6 +42,58 @@ class User extends CI_Controller{
     }
             
         }
+        
+    public function modifiermonprofil() {
+            
+        if( get_cookie('nom_utilisateur')==''){
+          
+             redirect('User/index');
+           
+           
+    }
+    else {
+            $cookie_decry=$this->encryption->decrypt(get_cookie('nom_utilisateur'));
+            $data['utilisateur']= $this->user_model->getinfouser($cookie_decry);
+            $this->load->view('user/modif_profil',$data);
+    }
+            
+        }  
+        
+        public function valid_modifierprofil(){
+            $cookie_decry=$this->encryption->decrypt(get_cookie('nom_utilisateur'));
+            $this->form_validation->set_rules('Nom','Nom','min_length[5]|max_length[30]',
+                   array(
+                    'max_length' => "Nom  trop long 30 caractères",
+                    'min_length' => "Nom  trop court 5 caractères"   
+                   )
+                   );
+           $this->form_validation->set_rules('Prenom','Prenom','min_length[5]|max_length[30]',
+                   array(
+                    'max_length' => "Prenom  trop long 30 caractères",
+                    'min_length' => "Prenom  trop court 5 caractères"   
+                   )
+                   );
+            
+            if ($this->form_validation->run() == TRUE){
+             
+                $data=array(
+                        
+                        "nom"=> htmlspecialchars($_POST['nom']),
+                        "prenom"=> htmlspecialchars($_POST['prenom']),
+                        "niveauplongee" => htmlspecialchars($_POST['NiveauPlongee']),
+                        
+                        );
+                $this->user_model->update($cookie_decry,$data);
+                redirect('User/affichermonprofil');
+            }
+            else {
+                redirect('User/modifiermonprofil');
+            }
+            
+            
+            
+            
+        }
     
     public function validconnexion(){
 
@@ -85,6 +137,12 @@ class User extends CI_Controller{
                    array(
                     'max_length' => "Nom  trop long 30 caractères",
                     'min_length' => "Nom  trop court 5 caractères"   
+                   )
+                   );
+           $this->form_validation->set_rules('Prenom','Prenom','min_length[5]|max_length[30]',
+                   array(
+                    'max_length' => "Prenom  trop long 30 caractères",
+                    'min_length' => "Prenom  trop court 5 caractères"   
                    )
                    );
            
