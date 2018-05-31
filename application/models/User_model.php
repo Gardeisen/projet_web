@@ -26,7 +26,7 @@ class User_model extends CI_Model{
 
         $this->db->set('nom', $data['nom'])
                 ->set('prenom', $data['prenom'])
-                ->set('niveaudeplongee', $data['NiveauPlongee'])
+                ->set('niveaudeplongee', $data['niveau'])
                 ->where('nomutilisateur',$id)
                 ->update($this->table);
 

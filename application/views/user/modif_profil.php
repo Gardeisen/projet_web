@@ -109,7 +109,8 @@
 				<div class="row-fluid centered">
                                     <div class="col-sm-12"><h4> Nom : <input type="text" class="form-control" name="nom" value="<?php echo $utilisateur[0]->nom ?>"/></h4></div>
 					<div class="col-sm-12"><h4> Prénom : <input type="text" class="form-control" name="prenom" value="<?php echo $utilisateur[0]->prenom ?>" /></h4></div>
-					<div class="col-sm-12"><h4> Niveau de Plongée : <select class="form-control" name="NiveauPlongee" value="<?php echo $utilisateur[0]->niveauplongee ?>">
+					<div class="col-sm-12"><h4> Niveau de Plongée : 
+                                                <select class="form-control" name="niveau">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>

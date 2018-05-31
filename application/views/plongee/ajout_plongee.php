@@ -97,7 +97,7 @@
 		<div id="content" class="col-xs-12 col-sm-10">
                     
                   
-                    
+                   
                     
                     
 <div class="container-fluid" >
@@ -111,7 +111,7 @@
 						<div class="form-group">
 							<label class="col-sm-3 control-label">Date de la Plongée</label>
 							<div class="col-sm-5">
-                                                            <input type="date" class="form-control" name="date" value="<?php echo set_value('date')?>" required />
+                                                            <input type="date" class="form-control" name="date"  max="<?php echo mdate('%Y-%m-%d');?>"/>
                                                             <h6 style="color:red;"><?php echo form_error('date'); ?></h6>
 							</div>
 						</div>

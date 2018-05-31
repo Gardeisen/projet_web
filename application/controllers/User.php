@@ -61,16 +61,14 @@ class User extends CI_Controller{
         
         public function valid_modifierprofil(){
             $cookie_decry=$this->encryption->decrypt(get_cookie('nom_utilisateur'));
-            $this->form_validation->set_rules('Nom','Nom','min_length[5]|max_length[30]',
+            $this->form_validation->set_rules('Nom','Nom','max_length[30]',
                    array(
-                    'max_length' => "Nom  trop long 30 caractères",
-                    'min_length' => "Nom  trop court 5 caractères"   
+                    'max_length' => "Nom  trop long 30 caractères" 
                    )
                    );
-           $this->form_validation->set_rules('Prenom','Prenom','min_length[5]|max_length[30]',
+           $this->form_validation->set_rules('Prenom','Prenom','max_length[30]',
                    array(
-                    'max_length' => "Prenom  trop long 30 caractères",
-                    'min_length' => "Prenom  trop court 5 caractères"   
+                    'max_length' => "Prenom  trop long 30 caractères" 
                    )
                    );
             
@@ -80,7 +78,7 @@ class User extends CI_Controller{
                         
                         "nom"=> htmlspecialchars($_POST['nom']),
                         "prenom"=> htmlspecialchars($_POST['prenom']),
-                        "niveauplongee" => htmlspecialchars($_POST['NiveauPlongee']),
+                        "niveau" => htmlspecialchars($_POST['niveau']),
                         
                         );
                 $this->user_model->update($cookie_decry,$data);
@@ -133,16 +131,14 @@ class User extends CI_Controller{
     public function inscriptionvalid(){
            
         
-           $this->form_validation->set_rules('Nom','Nom','min_length[5]|max_length[30]',
+           $this->form_validation->set_rules('Nom','Nom','max_length[30]',
                    array(
-                    'max_length' => "Nom  trop long 30 caractères",
-                    'min_length' => "Nom  trop court 5 caractères"   
+                    'max_length' => "Nom  trop long 30 caractères"  
                    )
                    );
-           $this->form_validation->set_rules('Prenom','Prenom','min_length[5]|max_length[30]',
+           $this->form_validation->set_rules('Prenom','Prenom','max_length[30]',
                    array(
-                    'max_length' => "Prenom  trop long 30 caractères",
-                    'min_length' => "Prenom  trop court 5 caractères"   
+                    'max_length' => "Prenom  trop long 30 caractères"  
                    )
                    );
            
@@ -183,7 +179,8 @@ class User extends CI_Controller{
     
                        $this->user_model->insert($data);
                        $cookie_cry = $this->encryption->encrypt($data['NomUtilisateur']);
-                       set_cookie('nom_utilisateur', $cookie_cry,'3600');  
+                       set_cookie('nom_utilisateur', $cookie_cry,'3600'); 
+                       
                        $this->load->view('plongee/index');
                       
                 }
