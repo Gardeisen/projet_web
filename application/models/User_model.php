@@ -36,7 +36,7 @@ class User_model extends CI_Model{
     public function getinfouser($nomutilisateur){
         
         return 
-        $this->db->select('nom ,prenom ,niveaudeplongee')
+        $this->db->select('nom ,prenom ,niveaudeplongee,nbplongee')
                 ->from($this->table)
                 ->where('users.nomutilisateur',$nomutilisateur)
                 ->get()

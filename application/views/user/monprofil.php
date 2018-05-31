@@ -109,7 +109,7 @@
 					<div class="col-sm-12"><h4> Nom : <?php echo $utilisateur[0]->nom ?></h4></div>
 					<div class="col-sm-12"><h4> Prénom : <?php echo $utilisateur[0]->prenom ?></h4></div>
 					<div class="col-sm-12"><h4> Niveau de Plongée : <?php echo $utilisateur[0]->niveaudeplongee ?></h4></div>
-                                        <div class="col-sm-12"><h4> Nombre de Plongées : nb à remplir trigger</h4></div>
+                                        <div class="col-sm-12"><h4> Nombre de Plongées : <?php echo $utilisateur[0]->nbplongee ?></h4></div>
 					<div class="clearfix"></div>
 				</div>
 				<div class="row-fluid bg-default">
