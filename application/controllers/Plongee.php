@@ -110,4 +110,11 @@ class Plongee extends CI_Controller{
            }
             redirect('Plongee/affichermesplongees');
     }
+    
+    
+    public function delete($id) {
+      
+      $this->plongee_model->delete($id); 
+      redirect('Plongee/affichermesplongees');
+    }
 }

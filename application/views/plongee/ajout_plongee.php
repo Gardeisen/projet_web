@@ -179,7 +179,7 @@
                                                 
 						<?php foreach ($faune as $item) {
                                                     
-                                                    echo"<div><label><input type='checkbox' name ='faune[]' value=$item->idfaune>$item->nomfaune</input></label></div> ";
+                                                    echo"<div><label><input type='checkbox' required name ='faune[]' value=$item->idfaune>$item->nomfaune</input></label></div> ";
                                                    
                                                 }
                                                 ?>

@@ -124,7 +124,7 @@
                             </div>
                             
                             <div class="card">
-                                <h3 class="page-header">La Faune observée </h3>
+                                <h3 class="page-header">La Faune observée (cliquez sur les liens pour se remémorer)</h3>
 					<p>
 						<?php foreach ($plongee as $item) {
                                                 $lien = "https://www.google.com/search?q=google+image+poisson+$item->nomfaune";   
@@ -137,7 +137,7 @@
                             </div>
                             
                             <div class="card">
-                                <h3 class="page-header">La Flore observée </h3>
+                                <h3 class="page-header">La Flore observée (cliquez sur les liens pour se remémorer)</h3>
 					<p>
 						<?php foreach ($plongee as $item) {
                                                 $lien = "https://www.google.com/search?q=google+image+$item->nomflore+flore+sous+marine";   
@@ -148,11 +148,14 @@
                                              
 					</p>
                             </div>
-                        
+                            <?php $idP = $plongee[0]->idplongee;?>
                             <div class="col-sm-9 col-sm-offset-3">
-				<button class="btn btn-primary btn-danger btn-lg">- Supprimer Cette Plongée-</button>
+                                <?php  $lien = site_url("Plongee/delete/$idP");?>
+                                <a href="<?php echo $lien?>" 
+                                <button type="submit" class="btn btn-primary btn-danger btn-lg">- Supprimer Cette Plongée-</button>
+                                </a>
                             </div>
-                        
+                            <?php var_dump($plongee[0]->idplongee);?>
                         
                         
                         </div>

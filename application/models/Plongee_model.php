@@ -22,6 +22,11 @@ class Plongee_model extends CI_Model{
        
     }
     
+    public function delete($idplongee) {
+       
+        return $this->db->where('idplongee', (int) $idplongee)
+                        ->delete($this->table);
+    }
     
     
     public function insert($data){
