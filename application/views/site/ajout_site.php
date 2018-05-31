@@ -111,8 +111,8 @@
                                             <div class="form-group">
 							<label class="col-sm-5 control-label">Nom </label>
 							<div class="col-sm-5">
-                                                            <input type="text" class="form-control" name="nom" value="<?php echo set_value('nom'); ?>" size="25" required />
-                                                           
+                                                            <input type="text" class="form-control" name="nom" value="<?php echo set_value('nom'); ?>"  required />
+                                                            <h6 style="color:red;"><?php echo form_error('nom'); ?></h6>
 							</div>
 						</div>
                                             
@@ -120,15 +120,15 @@
                                                 <div class="form-group">
 							<label class="col-sm-5 control-label">Situation Géographique</label>
 							<div class="col-sm-5">
-								<input type="float" class="form-control" name="positiongeo" value="<?php echo set_value('positiongeo'); ?>" size="20" required/>
-                                                                 <?php echo form_error('positiongeo'); ?>
+								<input type="float" class="form-control" name="positiongeo" value="<?php echo set_value('positiongeo'); ?>"  required/>
+                                                                <h6 style="color:red;"><?php echo form_error('positiongeo'); ?></h6>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-sm-5 control-label">Description</label>
 							<div class="col-sm-5">
-                                                            <textarea type="text" class="form-control" name="description" value="<?php echo set_value('description'); ?>" size="100" ></textarea>
-                                                            
+                                                            <textarea type="text" class="form-control" name="description" value="<?php echo set_value('description'); ?>"  ></textarea>
+                                                            <h6 style="color:red;"><?php echo form_error('description'); ?></h6>
 							</div>
 						</div>
                                            

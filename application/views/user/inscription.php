@@ -54,19 +54,20 @@
                     
                     <div class="form-group">
                         <label class="control-label">Nom Utilisateur</label>
-                        <input type="text" class="form-control" name="NomUtilisateur" value="<?php echo set_value('NomUtilisateur'); ?>" size="30" required/> 
+                        <input type="text" class="form-control" name="NomUtilisateur" value="<?php echo set_value('NomUtilisateur'); ?>"  required/> 
                             <h6 style="color:red;"><?php echo form_error('NomUtilisateur'); ?></h6>
                     </div>
                     
                     <div class="form-group">
                         <label class="control-label">Nom</label>
                         <input type="text" class="form-control" name="Nom" value="<?php echo set_value('Nom'); ?>" size="30" required/>
-                        <?php echo form_error('Nom'); ?>
+                        <h6 style="color:red;"><?php echo form_error('Nom'); ?></h6>
                     </div>
                     
                     <div class="form-group">
                         <label class="control-label">Prenom</label>
                         <input type="text" class="form-control" name="Prenom" value="<?php echo set_value('Prenom'); ?>" size="30" required/> 
+                        <h6 style="color:red;"><?php echo form_error('Prenom'); ?></h6>
                     </div>
                     
                     <div class="row form-group">

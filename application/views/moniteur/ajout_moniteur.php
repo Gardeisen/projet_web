@@ -119,7 +119,8 @@
                                                 <div class="form-group">
 							<label class="col-sm-5 control-label">Prenom</label>
 							<div class="col-sm-5">
-								<input type="float" class="form-control" name="prenom" value="<?php echo set_value('prenom'); ?>" />
+                                                            <input type="float" class="form-control" name="prenom" value="<?php echo set_value('prenom'); ?>" required/>
+                                                            <?php echo form_error('nom'); ?>
 							</div>
 						</div>
                                             
@@ -127,8 +128,7 @@
 							<label class="col-sm-5 control-label">Niveau de Plongée</label>
 							<div class="col-sm-5">
                                                             <select class="form-control" name="NiveauPlongee">
-                                                                <option value="1">1</option>
-							        <option value="2">2</option>
+                                                                
                                                                 <option value="3">3</option>
 							        <option value="4">4</option>
 							        <option value="5">5</option>

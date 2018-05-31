@@ -81,11 +81,18 @@ class User extends CI_Controller{
     public function inscriptionvalid(){
            
         
+           $this->form_validation->set_rules('Nom','Nom','min_length[5]|max_length[30]',
+                   array(
+                    'max_length' => "Nom  trop long 30 caractères",
+                    'min_length' => "Nom  trop court 5 caractères"   
+                   )
+                   );
            
-           
-           $this->form_validation->set_rules('NomUtilisateur','Nom Utilisateur', 'is_unique[users.nomutilisateur]',
+           $this->form_validation->set_rules('NomUtilisateur','Nom Utilisateur', 'min_length[5]|max_length[30]|is_unique[users.nomutilisateur]',
            array(
-               'is_unique' => "nom utilisateur déjà choisit"
+               'is_unique' => "Nom utilisateur déjà choisit",
+               'max_length' => "Nom utilisateur trop long 30 caractères",
+               'min_length' => "Nom utilisateur trop court 5 caractères"
            )
             );
             $this->form_validation->set_rules('password', 'Mot de passe', 'required');

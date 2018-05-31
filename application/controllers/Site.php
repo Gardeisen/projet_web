@@ -13,6 +13,7 @@ class Site extends CI_Controller{
         if( get_cookie('nom_utilisateur')==''){
           
              $this->load->view('user/connexion');
+             
            
            
     }
@@ -23,7 +24,13 @@ class Site extends CI_Controller{
 
     public function insert(){
         
-        
+                $this->form_validation->set_rules('Condition de Plongée','Condition de Plongée','min_length[0]|max_length[50]',
+                   array(
+                    'max_length' => "Condition  trop longue 50 caractères",
+                    'min_length' => "Condition  trop courte 5 caractères"   
+                   )
+                   );
+            if ($this->form_validation->run() == TRUE){
                     $data=array(
                         "nom"=> htmlspecialchars($_POST['nom']),
                         "description"=> htmlspecialchars($_POST['description']),
@@ -32,7 +39,10 @@ class Site extends CI_Controller{
                     
                     $this->site_model->insert($data);
                     redirect('Plongee/ajouterplongee');
-                
+            } 
+            else {
+                redirect('Site/ajoutersite');
+            }
         
     }
 }

@@ -111,16 +111,16 @@
                                             <div class="form-group">
 							<label class="col-sm-5 control-label">Nom</label>
 							<div class="col-sm-5">
-                                                            <input type="text" class="form-control" name="nom" value="<?php echo set_value('nom'); ?>" size="25" required />
-                                                            <?php echo form_error('nom'); ?>
+                                                            <input type="text" class="form-control" name="nom" value="<?php echo set_value('nom'); ?>"  required />
+                                                            <h6 style="color:red;"><?php echo form_error('nom'); ?></h6>
 							</div>
 						</div>
                                             
 						<div class="form-group">
 							<label class="col-sm-5 control-label">Description</label>
 							<div class="col-sm-5">
-                                                            <textarea type="text" class="form-control" name="description" value="<?php echo set_value('description'); ?>"size="100" ></textarea>
-                                                            
+                                                            <textarea type="text" class="form-control" name="description" value="<?php echo set_value('description'); ?>" required ></textarea>
+                                                            <h6 style="color:red;"><?php echo form_error('description'); ?></h6>
 							</div>
 						</div>
                                            

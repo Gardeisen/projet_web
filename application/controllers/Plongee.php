@@ -40,19 +40,36 @@ class Plongee extends CI_Controller{
         
         if( get_cookie('nom_utilisateur')!=''){
           
+            
+            $this->form_validation->set_rules('Condition de Plongée','Condition de Plongée','min_length[0]|max_length[50]',
+                   array(
+                    'max_length' => "Conditions  trop longue 50 caractères",
+                    'min_length' => "Conditions  trop courte 5 caractères"   
+                   )
+                   );
+            if ($this->form_validation->run() == TRUE){
            
            $data['site']= $this->site_model->getall();
            $data['moniteur']= $this->moniteur_model->getall(); 
            $data['faune']= $this->faune_model->getall();
            $data['flore']= $this->flore_model->getall();
            $this->load->view('plongee/ajout_plongee',$data);
-           
-           
+            }  
+            else{ 
+                $data['site']= $this->site_model->getall();
+                $data['moniteur']= $this->moniteur_model->getall(); 
+                $data['faune']= $this->faune_model->getall();
+                $data['flore']= $this->flore_model->getall();
+                $this->load->view('plongee/ajout_plongee',$data);
+                
+            }
+        }
+            else {
+                redirect('User/index');
+                
+            }
     }
-    else {
-             redirect('User/index');
-    }
-    }
+   
     
     public function creationplongee(){
         

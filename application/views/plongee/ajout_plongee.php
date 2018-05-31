@@ -112,20 +112,21 @@
 							<label class="col-sm-3 control-label">Date de la Plongée</label>
 							<div class="col-sm-5">
                                                             <input type="date" class="form-control" name="date" value="<?php echo set_value('date')?>" required />
-                                                            <?php echo form_error('date'); ?>
+                                                            <h6 style="color:red;"><?php echo form_error('date'); ?></h6>
 							</div>
 						</div>
                                                 <div class="form-group">
 							<label class="col-sm-3 control-label">Profondeur</label>
 							<div class="col-sm-5">
-                                                            <input type="float" class="form-control" name="profondeur" value="<?php echo set_value('profondeur')?>" required />
-                                                            <?php echo form_error('profondeur'); ?>
+                                                            <input type="number" class="form-control" name="profondeur"min="0" max="70" value="<?php echo set_value('profondeur')?>" required />
+                                                            <h6 style="color:red;"><?php echo form_error('profondeur'); ?></h6>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-sm-3 control-label">Condition de Plongée</label>
 							<div class="col-sm-5">
-                                                            <textarea type="text" class="form-control" name="condition" ></textarea>
+                                                            <textarea type="text" class="form-control" name="condition" required></textarea>
+                                                            <h6 style="color:red;"><?php echo form_error('condition'); ?></h6>
 							</div>
 						</div>
                                             <div class="form-group">
