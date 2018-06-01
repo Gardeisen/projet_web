@@ -49,15 +49,21 @@ class Plongee extends CI_Controller{
                    );
             if ($this->form_validation->run() == TRUE){
            
+                
+                
            $data['site']= $this->site_model->getall();
            $data['moniteur']= $this->moniteur_model->getall(); 
+           
+           
            $data['faune']= $this->faune_model->getall();
            $data['flore']= $this->flore_model->getall();
+           
            $this->load->view('plongee/ajout_plongee',$data);
             }  
             else{ 
                 $data['site']= $this->site_model->getall();
                 $data['moniteur']= $this->moniteur_model->getall(); 
+                
                 $data['faune']= $this->faune_model->getall();
                 $data['flore']= $this->flore_model->getall();
                 $this->load->view('plongee/ajout_plongee',$data);
@@ -86,7 +92,7 @@ class Plongee extends CI_Controller{
            $this->plongee_model->insert($newP);
            
            $data=$_POST['faune'];
-           
+           if (isset($data[0])){
            foreach($data as $valeur){
                 $tab=$this->plongee_model->getlastidplongee();
                 var_dump($tab);
@@ -97,8 +103,10 @@ class Plongee extends CI_Controller{
                    );
                    $this->vufaune_model->insert($faune);
            }
-           $data2=$_POST['flore'];
+           }
            
+           $data2=$_POST['flore'];
+           if (isset($data2[0])){
            foreach($data2 as $valeur){
                 $tab=$this->plongee_model->getlastidplongee();
                 $flore=array(
@@ -107,6 +115,7 @@ class Plongee extends CI_Controller{
                             "idflore"=>$valeur   
                    );
                    $this->vuflore_model->insert($flore);
+           }
            }
             redirect('Plongee/affichermesplongees');
     }
