@@ -17,7 +17,7 @@ class Faune extends CI_Controller{
            
     }
     else {
-            $this->load->view('Faune/ajout_faune');
+            $this->load->view('faune/ajout_faune');
     }
     }  
     
