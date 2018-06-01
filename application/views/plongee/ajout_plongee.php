@@ -171,7 +171,7 @@
                                    
 				<div class="row form-group">
                                     <label class="col-sm-3 control-label">La Faune vue</label>
-                                    <a href="<?php echo site_url("Faune/ajouterfaune")?>">
+                                    <a href="<?php echo site_url("faune/ajouterfaune")?>">
                                         <button type="button" class="btn btn-warning btn-xs" />nouvelle faune</button>
                                     </a>
                                             
@@ -188,7 +188,7 @@
                                             
                                             <div class="row form-group">
                                     <label class="col-sm-3 control-label">La Flore vue</label>
-                                    <a href="<?php echo site_url("Flore/ajouterflore")?>">
+                                    <a href="<?php echo site_url("flore/ajouterflore")?>">
                                         <button type="button" class="btn btn-warning btn-xs" />nouvelle flore</button>
                                     </a>        
                                             <div class="col-sm-5">
