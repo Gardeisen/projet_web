@@ -90,14 +90,14 @@
 		<div id="content" class="col-xs-12 col-sm-10">
 			
 			
-                            <div class="text-center">
+                            <div class="col-md-offset-5">
                                 <h1><u>Mon profil</u></h1>
                                 <br>
                                 <br>
                                
                             </div>
                     <form method="post" action="valid_modifierprofil">
-                    <div class="col-xs-12 col-sm-3">
+                    <div class="col-xs-12 col-sm-3 col-md-offset-4">
                         <div class="box box-pricing">
                             <div class="box-header">
 				<div class="box-name">
