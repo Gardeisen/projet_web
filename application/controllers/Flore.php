@@ -18,7 +18,7 @@ class Flore extends CI_Controller{
            
     }
     else {
-            $this->load->view('Flore/ajout_flore');
+            $this->load->view('flore/ajout_flore');
     }
     }   
     
