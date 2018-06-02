@@ -1,0 +1,131 @@
+create table moniteur(
+
+	idmoniteur serial,
+	nommono varchar(25),
+	prenommono varchar(20),
+     	niveauplongeeM integer,
+        constraint cp_moniteur primary key(idmoniteur)
+	
+);
+
+create table flore(
+
+	idflore serial,
+	nomflore varchar(25),
+	descriptionflore text,
+	constraint cp_flore primary key(idflore)
+);
+
+create table site(
+
+	idsite serial,
+	nomsite varchar(25),
+	descriptionsite text,
+      positiongeo varchar(20),
+	constraint cp_site primary key(idsite)
+);
+create table faune(
+
+	idfaune serial,
+	nomfaune varchar(25),
+	descriptionfaune text,
+	constraint cp_faune primary key(idfaune)
+);
+
+create table users (
+
+	iduser serial,
+     	nomUtilisateur varchar(30),
+	nom varchar(30),
+	prenom varchar(30),
+	niveaudeplongee integer,
+	motpasse varchar(50),
+	nbplongee integer,
+	constraint cp_user primary key (iduser)
+
+);
+
+
+
+create table plongee (
+
+	idplongee serial,
+	dateplongee date,
+	conditionplongee varchar(50),
+	profondeur float,
+	idmoniteur integer,
+	idsite integer,
+	iduser integer,
+	constraint cp_plongee primary key(idplongee),
+	constraint cf_plongee_moniteur foreign key(idmoniteur) references moniteur(idmoniteur),
+	constraint cf_plongee_site foreign key(idsite) references site(idsite),
+	constraint cf_plongee_user foreign key(iduser) references users(iduser)
+//mettre delete on cascade pour la future supprimer une plongee
+
+);
+
+create table vuFlore(
+
+	idplongee integer REFERENCES plongee ON DELETE CASCADE,
+
+	idflore integer REFERENCES flore ON DELETE CASCADE,
+
+	constraint cp_vuflore primary key(idplongee,idflore)
+	
+);
+
+
+
+create table vuFaune(
+
+	idplongee integer REFERENCES plongee ON DELETE CASCADE,
+
+	idfaune integer REFERENCES faune ON DELETE CASCADE,
+
+	constraint cp_vufaune primary key(idplongee,idfaune)
+	
+
+);
+
+
+//trigger
+
+CREATE OR REPLACE FUNCTION insert_ini_plongee()
+	RETURNS trigger AS $insert_ini_plongee$
+
+	BEGIN 
+	UPDATE users 
+	SET nbplongee=0
+	WHERE iduser=new.iduser;
+	RETURN NULL;
+	END;
+	$insert_ini_plongee$ LANGUAGE plpgsql;
+
+CREATE TRIGGER insert_ini_plongee
+
+	AFTER INSERT 
+	ON users
+	FOR EACH ROW
+	
+EXECUTE PROCEDURE insert_ini_plongee();
+
+//trigger
+
+CREATE OR REPLACE FUNCTION add_plongeenb()
+	RETURNS trigger AS $add_plongeenb$
+
+	BEGIN 
+	UPDATE users 
+	SET nbplongee=nbplongee+1
+	WHERE iduser=new.iduser;
+	RETURN NULL;
+	END;
+	$add_plongeenb$ LANGUAGE plpgsql;
+
+CREATE TRIGGER add_plongeenb
+
+	AFTER INSERT 
+	ON plongee
+	FOR EACH ROW
+	
+EXECUTE PROCEDURE add_plongeenb();
