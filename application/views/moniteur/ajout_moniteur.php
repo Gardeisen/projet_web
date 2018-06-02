@@ -142,7 +142,7 @@
 					
 					<div class="form-group">
 						<div class="text-center col-sm-offset-3">
-							<button type="submit" class="btn btn-primary btn-success">- Submit -</button>
+							<button type="submit" class="btn btn-primary btn-success">- Ajouter -</button>
 						</div>
                                                 <div class="text-center col-sm-offset-3">
                                                          <a href="<?php echo site_url("Plongee/ajouterplongee")?>" class="btn btn-primary btn-danger ">- Retour -</a>

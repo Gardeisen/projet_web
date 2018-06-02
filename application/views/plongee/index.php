@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Mes plongées</title>
+		<title>Accueil</title>
 		<meta name="description" content="description">
 		<meta name="author" content="DevOOPS">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -82,9 +82,8 @@
                     <p>
                         <br>
                     <h4>
-                        Voici votre carnet de bord en ligne, vous avez tendance à oublier votre carnet ou à le perdre ?
-                        Plus de soucis utiliser votre carnet de bord en ligne garder un historique de vos plongées !
-                        Et garder pleins de souvenir. 
+                        Voici votre carnet de bord en ligne ! <br> Vous avez tendance à oublier votre carnet ou à le perdre ? <br>
+                        Plus de soucis utilisez votre carnet de bord en ligne gardez un historique de vos plongées ainsi que  plein de souvenirs ! 
                         
                     </h4>
                     <br>

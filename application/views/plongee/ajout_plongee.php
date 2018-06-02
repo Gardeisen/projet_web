@@ -101,6 +101,7 @@
                     
                     
 <div class="container-fluid" >
+    <a href="index.php"></a>
    <div class="row">
                  <div class="col-xs-12 col-sm-8">
                    <div class="box-content">
@@ -111,7 +112,7 @@
 						<div class="form-group">
 							<label class="col-sm-3 control-label">Date de la Plongée</label>
 							<div class="col-sm-5">
-                                                            <input type="date" class="form-control" name="date"  max="<?php echo mdate('%Y-%m-%d');?>"/>
+                                                            <input type="date" class="form-control" name="date"  max="<?php echo mdate('%Y-%m-%d');?>" required/>
                                                             <h6 style="color:red;"><?php echo form_error('date'); ?></h6>
 							</div>
 						</div>
@@ -213,9 +214,7 @@
 					<div class="form-group">
 						<div class="text-center col-sm-offset-3">
 							<button type="submit" class="btn btn-primary btn-success">- Submit -</button>
-                                                        <a href="<?php echo site_url("Plongee/affichermesplongees")?>">
-                                                            <button class="btn btn-primary btn-primary ">-Voir mes plongées-</button>
-                                                        </a>
+                                                        
 						</div>
                                             
 					</div>
